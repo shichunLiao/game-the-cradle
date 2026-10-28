@@ -1,0 +1,1841 @@
+{
+ "res://src/levels/slum_rooftops.tscn": {
+  "actions": {
+   "climb_up": 1,
+   "drop": 1,
+   "gap": 6,
+   "jump": 9,
+   "start": 1,
+   "walk": 12
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 771,
+    "t1": 807,
+    "x": 1343.0,
+    "y": 736.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 905,
+    "t1": 1263,
+    "x": 1487.0,
+    "y": 692.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "GuardB"
+    ],
+    "t0": 1399,
+    "t1": 1724,
+    "x": 2205.0,
+    "y": 720.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 72.0,
+    "y": 800.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 471,
+    "watched": [],
+    "x": 887.0,
+    "y": 656.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 812,
+    "watched": [],
+    "x": 1417.0,
+    "y": 734.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 1432,
+    "watched": [],
+    "x": 2264.0,
+    "y": 672.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 2414,
+    "watched": [],
+    "x": 3096.0,
+    "y": 736.0
+   }
+  ],
+  "covered_ticks": 603,
+  "distance": 5357.0,
+  "guards": 2,
+  "lights": 0,
+  "route_steps": 30,
+  "scene": "res://src/levels/slum_rooftops.tscn",
+  "shade_ticks": 180,
+  "sources": {
+   "GuardA": {
+    "cycle": 14.9217391304348,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardB": {
+    "cycle": 14.9217391304348,
+    "kind": "patrol",
+    "sense": "sight"
+   }
+  },
+  "ticks": 2708,
+  "verdict": "REACHABLE"
+ },
+ "res://src/levels/tower_1_birthplace.tscn": {
+  "actions": {
+   "climb_up": 7,
+   "crawl": 2,
+   "drop": 1,
+   "gap": 6,
+   "jump": 11,
+   "panel": 1,
+   "start": 1,
+   "vent": 1,
+   "walk": 23
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 1,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 645,
+    "t1": 681,
+    "x": 673.0,
+    "y": 2784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 737,
+    "t1": 937,
+    "x": 834.0,
+    "y": 2784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "GuardA",
+     "GuardB"
+    ],
+    "t0": 983,
+    "t1": 1314,
+    "x": 1264.0,
+    "y": 2784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 4,
+    "src": [
+     "Gate00",
+     "GuardC"
+    ],
+    "t0": 2053,
+    "t1": 2513,
+    "x": 1776.0,
+    "y": 2336.0
+   },
+   {
+    "puzzle": [],
+    "seg": 4,
+    "src": [
+     "GuardC",
+     "GuardD"
+    ],
+    "t0": 2606,
+    "t1": 2656,
+    "x": 1068.0,
+    "y": 2251.0
+   },
+   {
+    "puzzle": [],
+    "seg": 7,
+    "src": [
+     "GuardE",
+     "GuardF"
+    ],
+    "t0": 4196,
+    "t1": 4734,
+    "x": 1152.0,
+    "y": 1804.0
+   },
+   {
+    "puzzle": [],
+    "seg": 9,
+    "src": [
+     "GuardT"
+    ],
+    "t0": 6119,
+    "t1": 6248,
+    "x": 421.0,
+    "y": 1361.0
+   },
+   {
+    "puzzle": [],
+    "seg": 9,
+    "src": [
+     "GuardT"
+    ],
+    "t0": 6429,
+    "t1": 6443,
+    "x": 104.0,
+    "y": 1364.0
+   },
+   {
+    "puzzle": [],
+    "seg": 11,
+    "src": [
+     "GuardP"
+    ],
+    "t0": 8308,
+    "t1": 8618,
+    "x": 752.0,
+    "y": 784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 11,
+    "src": [
+     "GuardP"
+    ],
+    "t0": 8753,
+    "t1": 8763,
+    "x": 168.0,
+    "y": 708.0
+   },
+   {
+    "puzzle": [],
+    "seg": 12,
+    "src": [
+     "GuardG"
+    ],
+    "t0": 9107,
+    "t1": 9561,
+    "x": 347.0,
+    "y": 544.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 72.0,
+    "y": 2784.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 657,
+    "watched": [
+     "GuardA"
+    ],
+    "x": 695.0,
+    "y": 2784.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 1289,
+    "watched": [
+     "GuardB"
+    ],
+    "x": 1799.0,
+    "y": 2784.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 2029,
+    "watched": [],
+    "x": 1816.0,
+    "y": 2336.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 2613,
+    "watched": [
+     "GuardC",
+     "GuardD"
+    ],
+    "x": 1059.0,
+    "y": 2301.0
+   },
+   {
+    "name": "Checkpoint05",
+    "t": 2823,
+    "watched": [],
+    "x": 216.0,
+    "y": 2336.0
+   },
+   {
+    "name": "Checkpoint06",
+    "t": 3581,
+    "watched": [],
+    "x": 136.0,
+    "y": 1888.0
+   },
+   {
+    "name": "Checkpoint07",
+    "t": 4560,
+    "watched": [
+     "GuardF"
+    ],
+    "x": 1751.0,
+    "y": 1888.0
+   },
+   {
+    "name": "Checkpoint08",
+    "t": 5309,
+    "watched": [],
+    "x": 1784.0,
+    "y": 1440.0
+   },
+   {
+    "name": "Checkpoint09",
+    "t": 7019,
+    "watched": [],
+    "x": 152.0,
+    "y": 992.0
+   },
+   {
+    "name": "Checkpoint10",
+    "t": 7956,
+    "watched": [],
+    "x": 1080.0,
+    "y": 784.0
+   },
+   {
+    "name": "Checkpoint11",
+    "t": 8936,
+    "watched": [],
+    "x": 168.0,
+    "y": 584.0
+   },
+   {
+    "name": "Checkpoint12",
+    "t": 9955,
+    "watched": [],
+    "x": 1480.0,
+    "y": 544.0
+   }
+  ],
+  "covered_ticks": 2543,
+  "distance": 13871.0,
+  "guards": 9,
+  "lights": 1,
+  "route_steps": 53,
+  "scene": "res://src/levels/tower_1_birthplace.tscn",
+  "shade_ticks": 475,
+  "sources": {
+   "Gate00": {
+    "cycle": 5.4,
+    "kind": "gate"
+   },
+   "GuardA": {
+    "cycle": 16.3130434782609,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardB": {
+    "cycle": 14.9217391304348,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardC": {
+    "cycle": 21.8782608695652,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardD": {
+    "cycle": 21.8782608695652,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardE": {
+    "cycle": 28.8347826086957,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardF": {
+    "cycle": 23.2695652173913,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardG": {
+    "cycle": 35.7913043478261,
+    "kind": "patrol",
+    "sense": "hearing"
+   },
+   "GuardP": {
+    "cycle": 16.3130434782609,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardT": {
+    "cycle": 26.0521739130435,
+    "kind": "patrol",
+    "sense": "sight"
+   }
+  },
+  "ticks": 10185,
+  "verdict": "REACHABLE"
+ },
+ "res://src/levels/pipeline_bridge.tscn": {
+  "actions": {
+   "drop": 1,
+   "gap": 3,
+   "jump": 4,
+   "start": 1,
+   "walk": 7
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "GuardA",
+     "Sweep00"
+    ],
+    "t0": 754,
+    "t1": 1023,
+    "x": 1389.0,
+    "y": 480.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 152.0,
+    "y": 480.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 462,
+    "watched": [],
+    "x": 951.0,
+    "y": 432.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 730,
+    "watched": [],
+    "x": 1352.0,
+    "y": 447.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 1138,
+    "watched": [],
+    "x": 2008.0,
+    "y": 528.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 1450,
+    "watched": [],
+    "x": 2536.0,
+    "y": 432.0
+   }
+  ],
+  "covered_ticks": 270,
+  "distance": 4102.0,
+  "guards": 1,
+  "lights": 1,
+  "route_steps": 16,
+  "scene": "res://src/levels/pipeline_bridge.tscn",
+  "shade_ticks": 0,
+  "sources": {
+   "GuardA": {
+    "cycle": 17.704347826087,
+    "kind": "patrol",
+    "sense": "hearing"
+   },
+   "Sweep00": {
+    "cycle": 6.5,
+    "kind": "sweep"
+   }
+  },
+  "ticks": 1830,
+  "verdict": "REACHABLE"
+ },
+ "res://src/levels/tower_2_refinery.tscn": {
+  "actions": {
+   "climb_up": 14,
+   "crawl": 1,
+   "dismantle_fence": 1,
+   "drop": 1,
+   "gap": 1,
+   "jump": 13,
+   "start": 1,
+   "walk": 31
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 1,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 56,
+    "t1": 74,
+    "x": 160.0,
+    "y": 3168.0
+   },
+   {
+    "puzzle": [],
+    "seg": 1,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 121,
+    "t1": 572,
+    "x": 274.0,
+    "y": 3168.0
+   },
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "GuardB"
+    ],
+    "t0": 1236,
+    "t1": 1672,
+    "x": 1832.0,
+    "y": 2695.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "GuardB"
+    ],
+    "t0": 1718,
+    "t1": 1736,
+    "x": 1056.0,
+    "y": 2672.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "GuardC"
+    ],
+    "t0": 2083,
+    "t1": 2589,
+    "x": 936.0,
+    "y": 2472.0
+   },
+   {
+    "puzzle": [],
+    "seg": 6,
+    "src": [
+     "GuardD"
+    ],
+    "t0": 3661,
+    "t1": 3717,
+    "x": 968.0,
+    "y": 2088.0
+   },
+   {
+    "puzzle": [],
+    "seg": 6,
+    "src": [
+     "GuardD"
+    ],
+    "t0": 3763,
+    "t1": 4230,
+    "x": 1072.0,
+    "y": 2064.0
+   },
+   {
+    "puzzle": [],
+    "seg": 7,
+    "src": [
+     "GuardF"
+    ],
+    "t0": 5440,
+    "t1": 5715,
+    "x": 1192.0,
+    "y": 1512.0
+   },
+   {
+    "puzzle": [],
+    "seg": 7,
+    "src": [
+     "GuardF"
+    ],
+    "t0": 5863,
+    "t1": 5900,
+    "x": 680.0,
+    "y": 1428.0
+   },
+   {
+    "puzzle": [],
+    "seg": 7,
+    "src": [
+     "GuardG"
+    ],
+    "t0": 6230,
+    "t1": 6273,
+    "x": 776.0,
+    "y": 1223.0
+   },
+   {
+    "puzzle": [],
+    "seg": 8,
+    "src": [
+     "GuardG"
+    ],
+    "t0": 6328,
+    "t1": 6860,
+    "x": 880.0,
+    "y": 1200.0
+   },
+   {
+    "puzzle": [],
+    "seg": 9,
+    "src": [
+     "GuardV1"
+    ],
+    "t0": 7163,
+    "t1": 7544,
+    "x": 1301.0,
+    "y": 1040.0
+   },
+   {
+    "puzzle": [
+     "蒸汽阀 Steam00"
+    ],
+    "seg": 10,
+    "src": [
+     "GuardS1"
+    ],
+    "t0": 8469,
+    "t1": 8540,
+    "x": 640.0,
+    "y": 832.0
+   },
+   {
+    "puzzle": [
+     "蒸汽阀 Steam01"
+    ],
+    "seg": 10,
+    "src": [
+     "GuardS2"
+    ],
+    "t0": 8871,
+    "t1": 8942,
+    "x": 1344.0,
+    "y": 832.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 72.0,
+    "y": 3168.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 984,
+    "watched": [],
+    "x": 1751.0,
+    "y": 2832.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 1301,
+    "watched": [
+     "GuardB"
+    ],
+    "x": 1784.0,
+    "y": 2672.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 2408,
+    "watched": [
+     "GuardC"
+    ],
+    "x": 440.0,
+    "y": 2448.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 2820,
+    "watched": [],
+    "x": 343.0,
+    "y": 2224.0
+   },
+   {
+    "name": "Checkpoint05",
+    "t": 3267,
+    "watched": [],
+    "x": 696.0,
+    "y": 2064.0
+   },
+   {
+    "name": "Checkpoint06",
+    "t": 4704,
+    "watched": [],
+    "x": 1785.0,
+    "y": 1776.0
+   },
+   {
+    "name": "Checkpoint07",
+    "t": 6295,
+    "watched": [],
+    "x": 824.0,
+    "y": 1200.0
+   },
+   {
+    "name": "Checkpoint08",
+    "t": 7014,
+    "watched": [],
+    "x": 1560.0,
+    "y": 1040.0
+   },
+   {
+    "name": "Checkpoint09",
+    "t": 8189,
+    "watched": [],
+    "x": 152.0,
+    "y": 832.0
+   },
+   {
+    "name": "Checkpoint10",
+    "t": 9353,
+    "watched": [],
+    "x": 1672.0,
+    "y": 632.0
+   }
+  ],
+  "covered_ticks": 3376,
+  "distance": 14338.0,
+  "guards": 11,
+  "lights": 1,
+  "route_steps": 63,
+  "scene": "res://src/levels/tower_2_refinery.tscn",
+  "shade_ticks": 337,
+  "sources": {
+   "Gate00": {
+    "cycle": 5.4,
+    "kind": "gate"
+   },
+   "GuardA": {
+    "cycle": 26.0521739130435,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardB": {
+    "cycle": 23.2695652173913,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardC": {
+    "cycle": 23.2695652173913,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardD": {
+    "cycle": 26.0521739130435,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardE": {
+    "cycle": 24.6608695652174,
+    "kind": "patrol",
+    "sense": "hearing"
+   },
+   "GuardF": {
+    "cycle": 20.4869565217391,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardG": {
+    "cycle": 30.2260869565217,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardH": {
+    "cycle": 19.095652173913,
+    "kind": "patrol",
+    "sense": "hearing"
+   },
+   "GuardS1": {
+    "cycle": -1.0,
+    "kind": "watcher",
+    "sense": "sight"
+   },
+   "GuardS2": {
+    "cycle": -1.0,
+    "kind": "watcher",
+    "sense": "sight"
+   },
+   "GuardV1": {
+    "cycle": 30.2260869565217,
+    "kind": "patrol",
+    "sense": "hearing"
+   }
+  },
+  "ticks": 10372,
+  "verdict": "REACHABLE"
+ },
+ "res://src/levels/sky_bridge.tscn": {
+  "actions": {
+   "climb_down": 4,
+   "drop": 1,
+   "gap": 3,
+   "jump": 2,
+   "start": 1,
+   "walk": 10
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 916,
+    "t1": 935,
+    "x": 1614.0,
+    "y": 381.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "GuardA",
+     "Sweep00"
+    ],
+    "t0": 982,
+    "t1": 1318,
+    "x": 1729.0,
+    "y": 352.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 104.0,
+    "y": 320.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 483,
+    "watched": [],
+    "x": 887.0,
+    "y": 317.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 939,
+    "watched": [],
+    "x": 1655.0,
+    "y": 352.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 1366,
+    "watched": [],
+    "x": 2328.0,
+    "y": 544.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 2931,
+    "watched": [],
+    "x": 2328.0,
+    "y": 1376.0
+   }
+  ],
+  "covered_ticks": 357,
+  "distance": 4335.0,
+  "guards": 1,
+  "lights": 1,
+  "route_steps": 21,
+  "scene": "res://src/levels/sky_bridge.tscn",
+  "shade_ticks": 46,
+  "sources": {
+   "GuardA": {
+    "cycle": 19.095652173913,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "Sweep00": {
+    "cycle": 6.0,
+    "kind": "sweep"
+   }
+  },
+  "ticks": 3030,
+  "verdict": "REACHABLE"
+ },
+ "res://src/levels/tower_3_registry.tscn": {
+  "actions": {
+   "climb_up": 6,
+   "gap": 1,
+   "jump": 9,
+   "panel": 3,
+   "start": 1,
+   "vent": 6,
+   "walk": 25
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 1,
+    "src": [
+     "Gate00"
+    ],
+    "t0": 130,
+    "t1": 174,
+    "x": 289.0,
+    "y": 2784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 1,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 252,
+    "t1": 683,
+    "x": 482.0,
+    "y": 2731.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "GuardC"
+    ],
+    "t0": 1179,
+    "t1": 1247,
+    "x": 1096.0,
+    "y": 2080.0
+   },
+   {
+    "puzzle": [],
+    "seg": 6,
+    "src": [
+     "Gate03",
+     "GuardD2"
+    ],
+    "t0": 2051,
+    "t1": 2490,
+    "x": 927.0,
+    "y": 1440.0
+   },
+   {
+    "puzzle": [],
+    "seg": 7,
+    "src": [
+     "GuardE"
+    ],
+    "t0": 2939,
+    "t1": 3798,
+    "x": 1712.0,
+    "y": 1216.0
+   },
+   {
+    "puzzle": [],
+    "seg": 8,
+    "src": [
+     "GuardK"
+    ],
+    "t0": 4373,
+    "t1": 4556,
+    "x": 904.0,
+    "y": 784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 8,
+    "src": [
+     "GuardK"
+    ],
+    "t0": 4803,
+    "t1": 4902,
+    "x": 1361.0,
+    "y": 784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 9,
+    "src": [
+     "GuardK"
+    ],
+    "t0": 5497,
+    "t1": 5597,
+    "x": 1535.0,
+    "y": 784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 9,
+    "src": [
+     "GuardK"
+    ],
+    "t0": 5680,
+    "t1": 5878,
+    "x": 1215.0,
+    "y": 784.0
+   },
+   {
+    "puzzle": [],
+    "seg": 11,
+    "src": [
+     "Gate04",
+     "GuardF"
+    ],
+    "t0": 7371,
+    "t1": 7479,
+    "x": 1346.0,
+    "y": 208.0
+   },
+   {
+    "puzzle": [],
+    "seg": 11,
+    "src": [
+     "GuardF"
+    ],
+    "t0": 7563,
+    "t1": 7617,
+    "x": 1682.0,
+    "y": 208.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 72.0,
+    "y": 2784.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 755,
+    "watched": [],
+    "x": 1832.0,
+    "y": 2544.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 1120,
+    "watched": [],
+    "x": 1816.0,
+    "y": 2336.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 1324,
+    "watched": [],
+    "x": 1336.0,
+    "y": 2048.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 1563,
+    "watched": [],
+    "x": 1448.0,
+    "y": 1928.0
+   },
+   {
+    "name": "Checkpoint05",
+    "t": 1991,
+    "watched": [],
+    "x": 824.0,
+    "y": 1440.0
+   },
+   {
+    "name": "Checkpoint06",
+    "t": 2915,
+    "watched": [],
+    "x": 1752.0,
+    "y": 1216.0
+   },
+   {
+    "name": "Checkpoint07",
+    "t": 4223,
+    "watched": [],
+    "x": 152.0,
+    "y": 992.0
+   },
+   {
+    "name": "Checkpoint08",
+    "t": 5168,
+    "watched": [],
+    "x": 983.0,
+    "y": 992.0
+   },
+   {
+    "name": "Checkpoint09",
+    "t": 5957,
+    "watched": [],
+    "x": 728.0,
+    "y": 784.0
+   },
+   {
+    "name": "Checkpoint10",
+    "t": 6667,
+    "watched": [],
+    "x": 151.0,
+    "y": 544.0
+   }
+  ],
+  "covered_ticks": 2580,
+  "distance": 10446.0,
+  "guards": 9,
+  "lights": 6,
+  "route_steps": 51,
+  "scene": "res://src/levels/tower_3_registry.tscn",
+  "shade_ticks": 728,
+  "sources": {
+   "Gate00": {
+    "cycle": 5.6,
+    "kind": "gate"
+   },
+   "Gate01": {
+    "cycle": 5.2,
+    "kind": "gate"
+   },
+   "Gate02": {
+    "cycle": 5.4,
+    "kind": "gate"
+   },
+   "Gate03": {
+    "cycle": 5.2,
+    "kind": "gate"
+   },
+   "Gate04": {
+    "cycle": 5.4,
+    "kind": "gate"
+   },
+   "Gate05": {
+    "cycle": 5.4,
+    "kind": "gate"
+   },
+   "GuardA": {
+    "cycle": 23.2695652173913,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardB": {
+    "cycle": 28.8347826086957,
+    "kind": "patrol",
+    "sense": "tracking"
+   },
+   "GuardC": {
+    "cycle": 28.8347826086957,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardD": {
+    "cycle": 19.095652173913,
+    "kind": "patrol",
+    "sense": "hearing"
+   },
+   "GuardD2": {
+    "cycle": 24.6608695652174,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardE": {
+    "cycle": 56.6608695652174,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardF": {
+    "cycle": 7.0,
+    "kind": "sentry",
+    "sense": "sight"
+   },
+   "GuardK": {
+    "cycle": 38.5739130434783,
+    "kind": "patrol",
+    "sense": "tracking"
+   },
+   "GuardR": {
+    "cycle": 27.4434782608696,
+    "kind": "patrol",
+    "sense": "sight"
+   }
+  },
+  "ticks": 7628,
+  "verdict": "REACHABLE"
+ },
+ "res://src/levels/scaffold_descent.tscn": {
+  "actions": {
+   "climb_down": 2,
+   "drop": 3,
+   "start": 1,
+   "walk": 6
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "Sweep00"
+    ],
+    "t0": 465,
+    "t1": 825,
+    "x": 1070.0,
+    "y": 480.0
+   },
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "Sweep01"
+    ],
+    "t0": 1460,
+    "t1": 1820,
+    "x": 1699.0,
+    "y": 896.0
+   },
+   {
+    "puzzle": [],
+    "seg": 4,
+    "src": [
+     "Sweep02"
+    ],
+    "t0": 2656,
+    "t1": 3016,
+    "x": 1070.0,
+    "y": 1312.0
+   },
+   {
+    "puzzle": [],
+    "seg": 4,
+    "src": [
+     "Sweep03"
+    ],
+    "t0": 3651,
+    "t1": 4011,
+    "x": 1699.0,
+    "y": 1728.0
+   },
+   {
+    "puzzle": [],
+    "seg": 6,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 4679,
+    "t1": 5071,
+    "x": 721.0,
+    "y": 2336.0
+   },
+   {
+    "puzzle": [],
+    "seg": 6,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 5136,
+    "t1": 5154,
+    "x": 1521.0,
+    "y": 2336.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 376.0,
+    "y": 160.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 222,
+    "watched": [],
+    "x": 666.0,
+    "y": 444.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 1484,
+    "watched": [
+     "Sweep01"
+    ],
+    "x": 1656.0,
+    "y": 896.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 2295,
+    "watched": [],
+    "x": 440.0,
+    "y": 1312.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 3675,
+    "watched": [
+     "Sweep03"
+    ],
+    "x": 1656.0,
+    "y": 1728.0
+   },
+   {
+    "name": "Checkpoint05",
+    "t": 4517,
+    "watched": [],
+    "x": 440.0,
+    "y": 2336.0
+   }
+  ],
+  "covered_ticks": 1856,
+  "distance": 8662.0,
+  "guards": 1,
+  "lights": 4,
+  "route_steps": 12,
+  "scene": "res://src/levels/scaffold_descent.tscn",
+  "shade_ticks": 147,
+  "sources": {
+   "GuardA": {
+    "cycle": 30.2260869565217,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "Sweep00": {
+    "cycle": 6.0,
+    "kind": "sweep"
+   },
+   "Sweep01": {
+    "cycle": 6.4,
+    "kind": "sweep"
+   },
+   "Sweep02": {
+    "cycle": 6.8,
+    "kind": "sweep"
+   },
+   "Sweep03": {
+    "cycle": 7.2,
+    "kind": "sweep"
+   }
+  },
+  "ticks": 5220,
+  "verdict": "REACHABLE"
+ },
+ "res://src/levels/tower_4_military.tscn": {
+  "actions": {
+   "climb_up": 10,
+   "crawl": 1,
+   "gap": 2,
+   "jump": 15,
+   "panel": 2,
+   "start": 1,
+   "walk": 31
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 1,
+    "src": [
+     "GuardA",
+     "Sweep00",
+     "Sweep01"
+    ],
+    "t0": 155,
+    "t1": 974,
+    "x": 333.0,
+    "y": 2928.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "GuardB"
+    ],
+    "t0": 1477,
+    "t1": 1858,
+    "x": 1621.0,
+    "y": 2480.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "Sweep02"
+    ],
+    "t0": 2373,
+    "t1": 2532,
+    "x": 436.0,
+    "y": 2336.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "Sweep02"
+    ],
+    "t0": 2812,
+    "t1": 2971,
+    "x": 157.0,
+    "y": 2192.0
+   },
+   {
+    "puzzle": [],
+    "seg": 3,
+    "src": [
+     "Sweep02"
+    ],
+    "t0": 3213,
+    "t1": 3372,
+    "x": 436.0,
+    "y": 2048.0
+   },
+   {
+    "puzzle": [],
+    "seg": 5,
+    "src": [
+     "Sweep03"
+    ],
+    "t0": 4445,
+    "t1": 4805,
+    "x": 1037.0,
+    "y": 1888.0
+   },
+   {
+    "puzzle": [],
+    "seg": 7,
+    "src": [
+     "GuardE",
+     "Sweep04"
+    ],
+    "t0": 5766,
+    "t1": 6228,
+    "x": 1507.0,
+    "y": 1296.0
+   },
+   {
+    "puzzle": [],
+    "seg": 8,
+    "src": [
+     "GuardE"
+    ],
+    "t0": 6302,
+    "t1": 6445,
+    "x": 576.0,
+    "y": 1296.0
+   },
+   {
+    "puzzle": [
+     "配电箱 Fuse00"
+    ],
+    "seg": 9,
+    "src": [
+     "GuardT",
+     "Sweep05",
+     "Sweep06"
+    ],
+    "t0": 7014,
+    "t1": 7918,
+    "x": 622.0,
+    "y": 992.0
+   },
+   {
+    "puzzle": [],
+    "seg": 11,
+    "src": [
+     "Sweep07"
+    ],
+    "t0": 9302,
+    "t1": 9497,
+    "x": 621.0,
+    "y": 496.0
+   },
+   {
+    "puzzle": [],
+    "seg": 11,
+    "src": [
+     "GuardF",
+     "Sweep08"
+    ],
+    "t0": 9613,
+    "t1": 9825,
+    "x": 1165.0,
+    "y": 304.0
+   },
+   {
+    "puzzle": [],
+    "seg": 11,
+    "src": [
+     "GuardF"
+    ],
+    "t0": 9908,
+    "t1": 9962,
+    "x": 1681.0,
+    "y": 208.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 72.0,
+    "y": 2928.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 1013,
+    "watched": [],
+    "x": 1784.0,
+    "y": 2688.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 1383,
+    "watched": [],
+    "x": 1784.0,
+    "y": 2480.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 3264,
+    "watched": [
+     "Sweep02"
+    ],
+    "x": 345.0,
+    "y": 2048.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 3635,
+    "watched": [],
+    "x": 151.0,
+    "y": 1888.0
+   },
+   {
+    "name": "Checkpoint05",
+    "t": 5294,
+    "watched": [],
+    "x": 1752.0,
+    "y": 1632.0
+   },
+   {
+    "name": "Checkpoint06",
+    "t": 5545,
+    "watched": [],
+    "x": 1704.0,
+    "y": 1480.0
+   },
+   {
+    "name": "Checkpoint07",
+    "t": 5807,
+    "watched": [
+     "Sweep04"
+    ],
+    "x": 1433.0,
+    "y": 1296.0
+   },
+   {
+    "name": "Checkpoint08",
+    "t": 7000,
+    "watched": [],
+    "x": 599.0,
+    "y": 992.0
+   },
+   {
+    "name": "Checkpoint09",
+    "t": 8029,
+    "watched": [],
+    "x": 1752.0,
+    "y": 784.0
+   },
+   {
+    "name": "Checkpoint10",
+    "t": 9174,
+    "watched": [],
+    "x": 552.0,
+    "y": 584.0
+   }
+  ],
+  "covered_ticks": 3971,
+  "distance": 13573.0,
+  "guards": 7,
+  "lights": 10,
+  "route_steps": 62,
+  "scene": "res://src/levels/tower_4_military.tscn",
+  "shade_ticks": 94,
+  "sources": {
+   "Gate00": {
+    "cycle": 5.4,
+    "kind": "gate"
+   },
+   "GuardA": {
+    "cycle": 5.18260869565217,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardB": {
+    "cycle": 30.2260869565217,
+    "kind": "patrol",
+    "sense": "hearing"
+   },
+   "GuardC": {
+    "cycle": 30.2260869565217,
+    "kind": "patrol",
+    "sense": "tracking"
+   },
+   "GuardD": {
+    "cycle": 26.0521739130435,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardE": {
+    "cycle": 7.0,
+    "kind": "sentry",
+    "sense": "sight"
+   },
+   "GuardF": {
+    "cycle": 7.0,
+    "kind": "sentry",
+    "sense": "sight"
+   },
+   "GuardT": {
+    "cycle": 9.35652173913043,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "Sweep00": {
+    "cycle": 6.0,
+    "kind": "sweep"
+   },
+   "Sweep01": {
+    "cycle": 5.0,
+    "kind": "sweep"
+   },
+   "Sweep02": {
+    "cycle": 6.5,
+    "kind": "sweep"
+   },
+   "Sweep03": {
+    "cycle": 5.5,
+    "kind": "sweep"
+   },
+   "Sweep04": {
+    "cycle": 6.0,
+    "kind": "sweep"
+   },
+   "Sweep05": {
+    "cycle": 4.6,
+    "kind": "sweep"
+   },
+   "Sweep06": {
+    "cycle": 4.6,
+    "kind": "sweep"
+   },
+   "Sweep07": {
+    "cycle": 5.0,
+    "kind": "sweep"
+   },
+   "Sweep08": {
+    "cycle": 5.0,
+    "kind": "sweep"
+   }
+  },
+  "ticks": 9974,
+  "verdict": "REACHABLE"
+ },
+ "res://src/levels/pit_descent.tscn": {
+  "actions": {
+   "climb_down": 3,
+   "drop": 6,
+   "start": 1,
+   "walk": 10
+  },
+  "beats": [
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 377,
+    "t1": 723,
+    "x": 657.0,
+    "y": 352.0
+   },
+   {
+    "puzzle": [],
+    "seg": 2,
+    "src": [
+     "GuardA"
+    ],
+    "t0": 808,
+    "t1": 810,
+    "x": 1352.0,
+    "y": 374.0
+   },
+   {
+    "puzzle": [],
+    "seg": 4,
+    "src": [
+     "GuardB"
+    ],
+    "t0": 2073,
+    "t1": 2380,
+    "x": 390.0,
+    "y": 736.0
+   },
+   {
+    "puzzle": [
+     "蚀池放流 Drain00"
+    ],
+    "seg": 6,
+    "src": [
+     "GuardP5",
+     "Sweep00",
+     "Sweep01"
+    ],
+    "t0": 4153,
+    "t1": 6562,
+    "x": 204.0,
+    "y": 1152.0
+   }
+  ],
+  "checkpoints": [
+   {
+    "name": "Checkpoint00",
+    "t": 1,
+    "watched": [],
+    "x": 72.0,
+    "y": 192.0
+   },
+   {
+    "name": "Checkpoint01",
+    "t": 307,
+    "watched": [],
+    "x": 536.0,
+    "y": 352.0
+   },
+   {
+    "name": "Checkpoint02",
+    "t": 1076,
+    "watched": [],
+    "x": 1337.0,
+    "y": 544.0
+   },
+   {
+    "name": "Checkpoint03",
+    "t": 1936,
+    "watched": [],
+    "x": 152.0,
+    "y": 736.0
+   },
+   {
+    "name": "Checkpoint04",
+    "t": 2906,
+    "watched": [],
+    "x": 1305.0,
+    "y": 928.0
+   },
+   {
+    "name": "Checkpoint05",
+    "t": 4085,
+    "watched": [],
+    "x": 87.0,
+    "y": 1152.0
+   },
+   {
+    "name": "Checkpoint06",
+    "t": 6678,
+    "watched": [],
+    "x": 1304.0,
+    "y": 1376.0
+   },
+   {
+    "name": "Checkpoint07",
+    "t": 7204,
+    "watched": [],
+    "x": 648.0,
+    "y": 1600.0
+   },
+   {
+    "name": "Checkpoint08",
+    "t": 7543,
+    "watched": [],
+    "x": 968.0,
+    "y": 1856.0
+   },
+   {
+    "name": "Checkpoint09",
+    "t": 7995,
+    "watched": [],
+    "x": 488.0,
+    "y": 2176.0
+   }
+  ],
+  "covered_ticks": 3068,
+  "distance": 10773.0,
+  "guards": 3,
+  "lights": 2,
+  "route_steps": 20,
+  "scene": "res://src/levels/pit_descent.tscn",
+  "shade_ticks": 258,
+  "sources": {
+   "GuardA": {
+    "cycle": 23.2695652173913,
+    "kind": "patrol",
+    "sense": "sight"
+   },
+   "GuardB": {
+    "cycle": 23.2695652173913,
+    "kind": "patrol",
+    "sense": "tracking"
+   },
+   "GuardP5": {
+    "cycle": 12.1391304347826,
+    "kind": "patrol",
+    "sense": "tracking"
+   },
+   "Sweep00": {
+    "cycle": 5.6,
+    "kind": "sweep"
+   },
+   "Sweep01": {
+    "cycle": 6.2,
+    "kind": "sweep"
+   }
+  },
+  "ticks": 8607,
+  "verdict": "REACHABLE"
+ }
+}

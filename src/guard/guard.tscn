@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/guard/guard.gd" id="1_gd"]
+[ext_resource type="PackedScene" path="res://src/guard/vision_cone.tscn" id="2_cone"]
+[ext_resource type="Script" path="res://src/guard/guard_sprite_visual.gd" id="3_gvis"]
+
+[node name="Guard" type="CharacterBody2D"]
+script = ExtResource("1_gd")
+
+[node name="VisionCone" parent="." instance=ExtResource("2_cone")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Visual" type="Node2D" parent="."]
+script = ExtResource("3_gvis")

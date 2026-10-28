@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TowerSubtitleConfig" format=3]
+
+[ext_resource type="Script" path="res://src/levels/tower_subtitle_config.gd" id="1_tsc"]
+
+[resource]
+script = ExtResource("1_tsc")
+font_size = 28
+color = Color(0.784314, 0.831373, 0.878431, 1)
+outline_size = 5
+outline_color = Color(0.0431373, 0.0705882, 0.12549, 1)
+bottom_margin = 104.0
+band_color = Color(0.0431373, 0.0705882, 0.12549, 1)
+band_alpha = 0.72
+band_padding = 12.0
+fade_in_time = 0.35
+hold_time = 2.4
+fade_out_time = 0.5
+exit_hold_before_load = 2.2

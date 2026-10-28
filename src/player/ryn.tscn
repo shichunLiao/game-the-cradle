@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://src/player/ryn.gd" id="1_ryn"]
+[ext_resource type="Resource" path="res://assets/data/ryn_movement.tres" id="2_cfg"]
+[ext_resource type="Script" path="res://src/player/ryn_placeholder_visual.gd" id="3_vis"]
+[ext_resource type="Script" path="res://src/player/ryn_sprite_visual.gd" id="4_spr"]
+[ext_resource type="Texture2D" path="res://assets/art/ryn_sprites.png" id="5_tex"]
+[ext_resource type="Script" path="res://src/player/sprint_afterimage.gd" id="6_ghost"]
+[ext_resource type="Script" path="res://src/player/ryn_throw.gd" id="7_throw"]
+[ext_resource type="Resource" path="res://assets/data/throw_default.tres" id="8_thrcfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sensor"]
+size = Vector2(4, 28)
+
+[node name="Ryn" type="CharacterBody2D"]
+script = ExtResource("1_ryn")
+config = ExtResource("2_cfg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Afterimage" type="Node2D" parent="." node_paths=PackedStringArray("ryn", "sprite")]
+script = ExtResource("6_ghost")
+ryn = NodePath("..")
+sprite = NodePath("../Visual")
+
+[node name="Visual" type="Node2D" parent="."]
+script = ExtResource("4_spr")
+texture = ExtResource("5_tex")
+
+[node name="LadderSensor" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderSensor"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_sensor")
+
+[node name="Throw" type="Node2D" parent="."]
+script = ExtResource("7_throw")
+config = ExtResource("8_thrcfg")

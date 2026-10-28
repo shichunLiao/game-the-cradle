@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/guard/vision_cone.gd" id="1_vc"]
+
+[node name="VisionCone" type="Area2D"]
+z_index = -1
+script = ExtResource("1_vc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

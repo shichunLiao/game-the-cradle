@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://src/ending/old_house_ending.gd" id="1_oh"]
+[ext_resource type="PackedScene" path="res://src/levels/gray_block.tscn" id="2_blk"]
+[ext_resource type="Resource" path="res://assets/data/ending.tres" id="3_ecfg"]
+[ext_resource type="Resource" path="res://assets/data/tower_subtitle.tres" id="4_font"]
+[ext_resource type="Script" path="res://src/levels/skyline_backdrop.gd" id="5_sky"]
+[ext_resource type="Script" path="res://src/audio/ambient_bed.gd" id="6_amb"]
+[ext_resource type="Script" path="res://src/ending/doorway_scene.gd" id="7_door"]
+[ext_resource type="Script" path="res://src/audio/music_player.gd" id="8_music"]
+
+[node name="OldHouseEnding" type="Node2D" node_paths=PackedStringArray("skyline", "ambient", "music")]
+script = ExtResource("1_oh")
+config = ExtResource("3_ecfg")
+font = ExtResource("4_font")
+skyline = NodePath("Skyline")
+ambient = NodePath("Ambient")
+music = NodePath("Music")
+
+[node name="Skyline" type="Node2D" parent="."]
+script = ExtResource("5_sky")
+level_rect = Rect2(0, 0, 1280, 720)
+horizon = 0.66
+focus_tower = -1
+pan = -0.05
+show_home_light = false
+
+[node name="Ground" parent="." instance=ExtResource("2_blk")]
+position = Vector2(0, 640)
+size = Vector2(1280, 80)
+fill_color = Color(0.0705882, 0.0627451, 0.0941176, 1)
+
+[node name="HouseWall" parent="." instance=ExtResource("2_blk")]
+position = Vector2(0, 360)
+size = Vector2(360, 280)
+fill_color = Color(0.101961, 0.164706, 0.266667, 1)
+
+[node name="Doorway" type="Node2D" parent="."]
+position = Vector2(150, 640)
+script = ExtResource("7_door")
+door_size = Vector2(112, 160)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Ambient" type="Node" parent="."]
+script = ExtResource("6_amb")
+profile = 7
+bed_db = -26.0
+accent_db = -30.0
+
+[node name="Music" type="Node" parent="."]
+script = ExtResource("8_music")
+track = &"ending"
+volume_db = -12.0
+fade_in = 3.0

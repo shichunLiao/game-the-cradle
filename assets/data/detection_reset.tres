@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DetectionResetConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/reset/detection_reset_config.gd" id="1_drcfg"]
+
+[resource]
+script = ExtResource("1_drcfg")
+spotted_line = "被发现了，看来这样行不通。"
+first_hearing_caught_line = "原来他是靠听觉行动的。"
+subtitle_font_names = PackedStringArray("PingFang SC", "Hiragino Sans GB", "Heiti SC", "Noto Sans CJK SC", "Microsoft YaHei", "sans-serif")
+subtitle_font_size = 28
+subtitle_color = Color(0.784314, 0.831373, 0.878431, 1)
+subtitle_outline_size = 4
+subtitle_outline_color = Color(0.043137, 0.070588, 0.12549, 1)
+subtitle_bottom_margin = 104.0
+edge_color = Color(0.043137, 0.070588, 0.12549, 1)
+darken_alpha = 0.9
+closure_fraction = 1.0
+close_in_time = 0.45
+subtitle_fade_in_time = 0.2
+subtitle_hold_time = 1.1
+fade_in_time = 0.6
+respawn_grace_time = 0.8

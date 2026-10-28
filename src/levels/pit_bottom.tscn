@@ -1,0 +1,260 @@
+[gd_scene load_steps=36 format=3]
+
+[ext_resource type="Script" path="res://src/levels/tower_level.gd" id="1_lvl"]
+[ext_resource type="PackedScene" path="res://src/levels/gray_block.tscn" id="2_blk"]
+[ext_resource type="PackedScene" path="res://src/player/ryn.tscn" id="3_ryn"]
+[ext_resource type="Script" path="res://src/camera/follow_camera.gd" id="4_cam"]
+[ext_resource type="Resource" path="res://assets/data/follow_camera.tres" id="5_ccfg"]
+[ext_resource type="PackedScene" path="res://src/reset/checkpoint.tscn" id="6_cp"]
+[ext_resource type="Script" path="res://src/reset/checkpoint_manager.gd" id="7_cpm"]
+[ext_resource type="Script" path="res://src/reset/detection_reset.gd" id="8_dr"]
+[ext_resource type="Resource" path="res://assets/data/detection_reset.tres" id="9_drcfg"]
+[ext_resource type="Script" path="res://src/reset/fail_overlay.gd" id="10_ovl"]
+[ext_resource type="Script" path="res://src/reset/ryn_reset_adapter.gd" id="11_rra"]
+[ext_resource type="Script" path="res://src/shadow/shadow_registry.gd" id="12_shr"]
+[ext_resource type="Resource" path="res://assets/data/shadow_default.tres" id="13_shcfg"]
+[ext_resource type="Script" path="res://src/levels/tower_subtitle.gd" id="14_sub"]
+[ext_resource type="Resource" path="res://assets/data/tower_subtitle.tres" id="15_subcfg"]
+[ext_resource type="PackedScene" path="res://src/levels/ladder.tscn" id="16_lad"]
+[ext_resource type="PackedScene" path="res://src/shadow/shadow_zone.tscn" id="17_shz"]
+[ext_resource type="Script" path="res://src/levels/vera_sweep.gd" id="18_sweep"]
+[ext_resource type="Script" path="res://src/ending/ending_sequence.gd" id="90_endseq"]
+[ext_resource type="Script" path="res://src/ending/photo_trigger.gd" id="91_photo"]
+[ext_resource type="Resource" path="res://assets/data/ending.tres" id="92_ecfg"]
+[ext_resource type="PackedScene" path="res://src/dismantle/dismantlable.tscn" id="93_dmz"]
+[ext_resource type="Resource" path="res://assets/data/dismantle_default.tres" id="94_dmcfg"]
+[ext_resource type="Script" path="res://src/levels/tower_backdrop.gd" id="80_bdrop"]
+[ext_resource type="Script" path="res://src/player/ryn_stealth_visual.gd" id="81_stealth"]
+[ext_resource type="Script" path="res://src/audio/gameplay_audio.gd" id="82_ga"]
+[ext_resource type="Script" path="res://src/camera/camera_shake.gd" id="83_shake"]
+[ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="84_pause"]
+[ext_resource type="Script" path="res://src/ui/scene_transition.gd" id="85_trans"]
+[ext_resource type="Script" path="res://src/levels/atmosphere.gd" id="89_atmo"]
+[ext_resource type="Script" path="res://src/levels/particle_burst.gd" id="90_part"]
+[ext_resource type="Script" path="res://src/ending/photo_display.gd" id="95_photo"]
+[ext_resource type="Texture2D" path="res://assets/art/photo_sisters.png" id="96_ptex"]
+[ext_resource type="Script" path="res://src/audio/ambient_bed.gd" id="97_amb"]
+[ext_resource type="Script" path="res://src/ending/vera_traces.gd" id="98_traces"]
+
+[node name="PitBottom" type="Node2D" node_paths=PackedStringArray("subtitle")]
+script = ExtResource("1_lvl")
+entry_line = ""
+exit_line = ""
+next_scene = ""
+subtitle = NodePath("TowerSubtitle")
+
+[node name="TowerSubtitle" type="CanvasLayer" parent="."]
+script = ExtResource("14_sub")
+config = ExtResource("15_subcfg")
+
+[node name="Backdrop" type="Node2D" parent="."]
+script = ExtResource("80_bdrop")
+area = Rect2(0, -140, 1240, 500)
+seed_value = 55
+stone_color = Color(0.054902, 0.0392157, 0.0862745, 1)
+mortar_color = Color(0.027451, 0.0196078, 0.0470588, 1)
+depth_color = Color(0.0196078, 0.0313725, 0.0509804, 1)
+glow_color = Color(0.290196, 0.247059, 0.419608, 0.16)
+layer_darken = 0.3
+breaches = 14
+arches = 5
+slits = 2
+niches = 4
+pilaster_spacing = 210
+course_every = 0
+pipes = 6
+pipe_color = Color(0.0862745, 0.141176, 0.227451, 1)
+rubble_count = 56
+rubble_color = Color(0.0627451, 0.0470588, 0.0941176, 1)
+ground_y = 320.0
+
+[node name="Floor" parent="." instance=ExtResource("2_blk")]
+position = Vector2(0, 320)
+size = Vector2(1240, 32)
+
+[node name="WallLeft" parent="." instance=ExtResource("2_blk")]
+position = Vector2(-16, -240)
+size = Vector2(16, 592)
+
+[node name="WallRight" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1240, -240)
+size = Vector2(16, 592)
+
+[node name="DescentLedgeA" parent="." instance=ExtResource("2_blk")]
+position = Vector2(180, 272)
+size = Vector2(80, 48)
+fill_color = Color(0.0705882, 0.0627451, 0.0941176, 1)
+
+[node name="DescentLadder" parent="." instance=ExtResource("16_lad")]
+position = Vector2(164, 272)
+size = Vector2(16, 48)
+
+[node name="HazeShadowWest" parent="." instance=ExtResource("17_shz")]
+position = Vector2(300, 280)
+size = Vector2(120, 40)
+
+[node name="CorePillarWest" parent="." instance=ExtResource("2_blk")]
+position = Vector2(520, 152)
+size = Vector2(24, 112)
+fill_color = Color(0.290196, 0.247059, 0.419608, 1)
+
+[node name="HazeShadowMid" parent="." instance=ExtResource("17_shz")]
+position = Vector2(544, 280)
+size = Vector2(136, 40)
+
+[node name="CorePillarEast" parent="." instance=ExtResource("2_blk")]
+position = Vector2(760, 152)
+size = Vector2(24, 112)
+fill_color = Color(0.290196, 0.247059, 0.419608, 1)
+
+[node name="CoreDais" parent="." instance=ExtResource("2_blk")]
+position = Vector2(900, 288)
+size = Vector2(240, 32)
+fill_color = Color(0.0705882, 0.0627451, 0.0941176, 1)
+
+[node name="DaisShadow" parent="." instance=ExtResource("17_shz")]
+position = Vector2(820, 280)
+size = Vector2(80, 40)
+
+[node name="Vera" type="ColorRect" parent="."]
+offset_left = 1000.0
+offset_top = 242.0
+offset_right = 1014.0
+offset_bottom = 288.0
+mouse_filter = 2
+color = Color(0.784314, 0.831373, 0.878431, 1)
+
+[node name="Pendant" type="ColorRect" parent="."]
+offset_left = 1005.0
+offset_top = 258.0
+offset_right = 1008.0
+offset_bottom = 261.0
+mouse_filter = 2
+color = Color(0.768627, 0.647059, 0.456863, 1)
+
+[node name="VeraTraces" type="Node2D" parent="."]
+position = Vector2(1000, 242)
+script = ExtResource("98_traces")
+font_config = ExtResource("15_subcfg")
+
+[node name="CutNode" parent="." instance=ExtResource("93_dmz")]
+position = Vector2(1060, 288)
+size = Vector2(32, 32)
+kind = 1
+config = ExtResource("94_dmcfg")
+
+[node name="PhotoTrigger" type="Area2D" parent="."]
+position = Vector2(930, 288)
+script = ExtResource("91_photo")
+size = Vector2(80, 56)
+config = ExtResource("92_ecfg")
+prompt_font = ExtResource("15_subcfg")
+
+[node name="PhotoDisplay" type="CanvasLayer" parent="."]
+script = ExtResource("95_photo")
+photo = ExtResource("96_ptex")
+font = ExtResource("15_subcfg")
+caption = "「终于找到你了。」"
+height_ratio = 0.62
+
+[node name="EndingSequence" type="Node" parent="." node_paths=PackedStringArray("subtitle", "ryn", "sweep", "photo", "cut_node", "pendant", "photo_display")]
+script = ExtResource("90_endseq")
+config = ExtResource("92_ecfg")
+subtitle = NodePath("../TowerSubtitle")
+ryn = NodePath("../Ryn")
+sweep = NodePath("../VeraSweep")
+photo = NodePath("../PhotoTrigger")
+cut_node = NodePath("../CutNode")
+pendant = NodePath("../Pendant")
+photo_display = NodePath("../PhotoDisplay")
+ending_scene = "res://src/levels/old_house_ending.tscn"
+
+[node name="VeraSweep" type="Area2D" parent="." node_paths=PackedStringArray("detection_reset")]
+position = Vector2(900, 288)
+script = ExtResource("18_sweep")
+detection_reset = NodePath("../DetectionReset")
+size = Vector2(240, 72)
+period = 3.2
+active_time = 0.7
+telegraph_time = 0.8
+
+[node name="CheckpointDescent" parent="." instance=ExtResource("6_cp")]
+position = Vector2(64, 320)
+
+[node name="CheckpointCoreApproach" parent="." instance=ExtResource("6_cp")]
+position = Vector2(700, 320)
+
+[node name="Ryn" parent="." instance=ExtResource("3_ryn")]
+position = Vector2(64, 320)
+
+[node name="ShadowRegistry" type="Node" parent="."]
+script = ExtResource("12_shr")
+config = ExtResource("13_shcfg")
+
+[node name="RynStealthVisual" type="Node" parent="." node_paths=PackedStringArray("ryn", "shadows")]
+script = ExtResource("81_stealth")
+ryn = NodePath("../Ryn")
+shadows = NodePath("../ShadowRegistry")
+
+[node name="RynResetAdapter" type="Node" parent="." node_paths=PackedStringArray("ryn")]
+script = ExtResource("11_rra")
+ryn = NodePath("../Ryn")
+
+[node name="CheckpointManager" type="Node" parent="." node_paths=PackedStringArray("ryn")]
+script = ExtResource("7_cpm")
+ryn = NodePath("../Ryn")
+
+[node name="FailOverlay" type="CanvasLayer" parent="."]
+script = ExtResource("10_ovl")
+config = ExtResource("9_drcfg")
+
+[node name="DetectionReset" type="Node" parent="." node_paths=PackedStringArray("ryn", "overlay", "checkpoints")]
+script = ExtResource("8_dr")
+config = ExtResource("9_drcfg")
+ryn = NodePath("../Ryn")
+overlay = NodePath("../FailOverlay")
+checkpoints = NodePath("../CheckpointManager")
+
+[node name="FollowCamera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = -120
+limit_right = 1256
+limit_bottom = 360
+script = ExtResource("4_cam")
+target = NodePath("../Ryn")
+config = ExtResource("5_ccfg")
+
+[node name="CameraShake" type="Node" parent="FollowCamera"]
+script = ExtResource("83_shake")
+
+[node name="GameplayAudio" type="Node" parent="." node_paths=PackedStringArray("ryn", "detection_reset", "checkpoints", "shake", "particles")]
+script = ExtResource("82_ga")
+particles = NodePath("../ParticleBurst")
+ryn = NodePath("../Ryn")
+shake = NodePath("../FollowCamera/CameraShake")
+detection_reset = NodePath("../DetectionReset")
+checkpoints = NodePath("../CheckpointManager")
+
+[node name="SceneTransition" type="CanvasLayer" parent="."]
+script = ExtResource("85_trans")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("84_pause")
+font = ExtResource("15_subcfg")
+
+[node name="Atmosphere" type="CanvasLayer" parent="."]
+script = ExtResource("89_atmo")
+vignette_alpha = 0.56
+dust_count = 40
+dust_color = Color(0.290196, 0.247059, 0.419608, 1)
+seed_value = 55
+
+[node name="ParticleBurst" type="Node2D" parent="."]
+script = ExtResource("90_part")
+
+[node name="Ambient" type="Node" parent="."]
+script = ExtResource("97_amb")
+profile = 6
+
+[connection signal="ark_stopped" from="EndingSequence" to="Ambient" method="fall_asleep"]

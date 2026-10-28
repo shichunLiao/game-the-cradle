@@ -1,0 +1,224 @@
+[gd_scene load_steps=31 format=3]
+
+[ext_resource type="Script" path="res://src/levels/movement_testbed.gd" id="1_tb"]
+[ext_resource type="PackedScene" path="res://src/levels/gray_block.tscn" id="2_blk"]
+[ext_resource type="PackedScene" path="res://src/levels/ladder.tscn" id="3_lad"]
+[ext_resource type="PackedScene" path="res://src/player/ryn.tscn" id="4_ryn"]
+[ext_resource type="Script" path="res://src/camera/follow_camera.gd" id="5_cam"]
+[ext_resource type="Resource" path="res://assets/data/follow_camera.tres" id="6_ccfg"]
+[ext_resource type="Script" path="res://src/dev/demo_state.gd" id="7_demo"]
+[ext_resource type="PackedScene" path="res://src/guard/guard.tscn" id="8_guard"]
+[ext_resource type="Resource" path="res://assets/data/guard_default.tres" id="9_gcfg"]
+[ext_resource type="PackedScene" path="res://src/reset/checkpoint.tscn" id="10_cp"]
+[ext_resource type="Script" path="res://src/reset/checkpoint_manager.gd" id="11_cpm"]
+[ext_resource type="Script" path="res://src/reset/detection_reset.gd" id="12_dr"]
+[ext_resource type="Resource" path="res://assets/data/detection_reset.tres" id="13_drcfg"]
+[ext_resource type="Script" path="res://src/reset/fail_overlay.gd" id="14_ovl"]
+[ext_resource type="Script" path="res://src/reset/ryn_reset_adapter.gd" id="15_rra"]
+[ext_resource type="Script" path="res://src/reset/guard_reset_adapter.gd" id="16_gra"]
+[ext_resource type="PackedScene" path="res://src/shadow/shadow_zone.tscn" id="17_shz"]
+[ext_resource type="Script" path="res://src/shadow/shadow_registry.gd" id="18_shr"]
+[ext_resource type="Resource" path="res://assets/data/shadow_default.tres" id="19_shcfg"]
+[ext_resource type="PackedScene" path="res://src/dismantle/dismantlable.tscn" id="20_dmz"]
+[ext_resource type="Resource" path="res://assets/data/dismantle_default.tres" id="21_dmcfg"]
+[ext_resource type="Script" path="res://src/dismantle/guard_reroute.gd" id="22_rrt"]
+[ext_resource type="Script" path="res://src/player/ryn_stealth_visual.gd" id="81_stealth"]
+[ext_resource type="Script" path="res://src/audio/gameplay_audio.gd" id="82_ga"]
+[ext_resource type="Script" path="res://src/camera/camera_shake.gd" id="83_shake"]
+[ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="84_pause"]
+[ext_resource type="Script" path="res://src/ui/scene_transition.gd" id="85_trans"]
+[ext_resource type="Script" path="res://src/guard/guard_pursuit.gd" id="87_pur"]
+[ext_resource type="Script" path="res://src/levels/particle_burst.gd" id="90_part"]
+
+[node name="MovementTestbed" type="Node2D"]
+script = ExtResource("1_tb")
+
+[node name="DemoState" type="Node" parent="." node_paths=PackedStringArray("ryn", "camera", "guard", "detection_reset", "checkpoints", "shadows", "guard2", "hatch", "fence")]
+script = ExtResource("7_demo")
+ryn = NodePath("../Ryn")
+camera = NodePath("../FollowCamera")
+guard = NodePath("../Guard")
+detection_reset = NodePath("../DetectionReset")
+checkpoints = NodePath("../CheckpointManager")
+shadows = NodePath("../ShadowRegistry")
+guard2 = NodePath("../Guard2")
+hatch = NodePath("../FloorHatch")
+fence = NodePath("../FenceGrate")
+
+[node name="Floor" parent="." instance=ExtResource("2_blk")]
+position = Vector2(0, 320)
+size = Vector2(1536, 32)
+
+[node name="WallLeft" parent="." instance=ExtResource("2_blk")]
+position = Vector2(-16, -200)
+size = Vector2(16, 552)
+
+[node name="WallRight" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1536, -200)
+size = Vector2(16, 552)
+
+[node name="LedgeLow" parent="." instance=ExtResource("2_blk")]
+position = Vector2(192, 288)
+size = Vector2(64, 32)
+
+[node name="LedgeMid" parent="." instance=ExtResource("2_blk")]
+position = Vector2(320, 272)
+size = Vector2(64, 48)
+
+[node name="LedgeTall" parent="." instance=ExtResource("2_blk")]
+position = Vector2(464, 192)
+size = Vector2(144, 128)
+
+[node name="Ladder" parent="." instance=ExtResource("3_lad")]
+position = Vector2(448, 192)
+size = Vector2(16, 128)
+
+[node name="LowCeiling" parent="." instance=ExtResource("2_blk")]
+position = Vector2(720, 248)
+size = Vector2(96, 32)
+
+[node name="SightBlocker" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1120, 280)
+size = Vector2(32, 40)
+
+[node name="ShadowZoneDeep" parent="." instance=ExtResource("17_shz")]
+position = Vector2(1210, 280)
+size = Vector2(80, 40)
+
+[node name="ShadowZoneLow" parent="." instance=ExtResource("17_shz")]
+position = Vector2(1320, 301)
+size = Vector2(70, 19)
+
+[node name="LadderCatwalk" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1392, 256)
+size = Vector2(16, 64)
+
+[node name="CatwalkWest" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1408, 256)
+size = Vector2(48, 16)
+
+[node name="FloorHatch" parent="." instance=ExtResource("20_dmz")]
+position = Vector2(1456, 256)
+size = Vector2(48, 16)
+kind = 0
+config = ExtResource("21_dmcfg")
+
+[node name="CatwalkEast" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1504, 256)
+size = Vector2(32, 16)
+
+[node name="FenceGrate" parent="." instance=ExtResource("20_dmz") node_paths=PackedStringArray("reroute")]
+position = Vector2(1500, 272)
+size = Vector2(8, 48)
+kind = 1
+config = ExtResource("21_dmcfg")
+reroute = NodePath("Reroute")
+
+[node name="Reroute" type="Node" parent="FenceGrate" node_paths=PackedStringArray("guard")]
+script = ExtResource("22_rrt")
+guard = NodePath("../../Guard")
+open_patrol_offset = 340.0
+
+[node name="ShadowZoneNook" parent="." instance=ExtResource("17_shz")]
+position = Vector2(1508, 280)
+size = Vector2(28, 40)
+
+[node name="ShadowRegistry" type="Node" parent="."]
+script = ExtResource("18_shr")
+config = ExtResource("19_shcfg")
+
+[node name="CheckpointStart" parent="." instance=ExtResource("10_cp")]
+position = Vector2(64, 320)
+
+[node name="CheckpointMid" parent="." instance=ExtResource("10_cp")]
+position = Vector2(1000, 320)
+
+[node name="Ryn" parent="." instance=ExtResource("4_ryn")]
+position = Vector2(64, 320)
+
+[node name="Guard" parent="." instance=ExtResource("8_guard")]
+position = Vector2(1180, 320)
+config = ExtResource("9_gcfg")
+patrol_offset = 260.0
+initial_facing = 1
+
+
+[node name="Pursuit" type="Node" parent="Guard"]
+script = ExtResource("87_pur")
+chase_enabled = false
+chase_speed_scale = 1.75
+lose_sight_grace = 1.8
+hearing_scale = 1.0
+[node name="RynStealthVisual" type="Node" parent="." node_paths=PackedStringArray("ryn", "shadows")]
+script = ExtResource("81_stealth")
+ryn = NodePath("../Ryn")
+shadows = NodePath("../ShadowRegistry")
+
+[node name="RynResetAdapter" type="Node" parent="." node_paths=PackedStringArray("ryn")]
+script = ExtResource("15_rra")
+ryn = NodePath("../Ryn")
+
+[node name="Guard2" parent="." instance=ExtResource("8_guard")]
+position = Vector2(1480, 256)
+config = ExtResource("9_gcfg")
+patrol_offset = -40.0
+initial_facing = 1
+
+
+[node name="Pursuit" type="Node" parent="Guard2"]
+script = ExtResource("87_pur")
+chase_enabled = false
+chase_speed_scale = 1.75
+lose_sight_grace = 1.8
+hearing_scale = 1.0
+[node name="Guard2ResetAdapter" type="Node" parent="Guard2"]
+script = ExtResource("16_gra")
+
+[node name="GuardResetAdapter" type="Node" parent="." node_paths=PackedStringArray("guard")]
+script = ExtResource("16_gra")
+guard = NodePath("../Guard")
+
+[node name="CheckpointManager" type="Node" parent="." node_paths=PackedStringArray("ryn")]
+script = ExtResource("11_cpm")
+ryn = NodePath("../Ryn")
+
+[node name="FailOverlay" type="CanvasLayer" parent="."]
+script = ExtResource("14_ovl")
+config = ExtResource("13_drcfg")
+
+[node name="DetectionReset" type="Node" parent="." node_paths=PackedStringArray("ryn", "overlay", "checkpoints")]
+script = ExtResource("12_dr")
+config = ExtResource("13_drcfg")
+ryn = NodePath("../Ryn")
+overlay = NodePath("../FailOverlay")
+checkpoints = NodePath("../CheckpointManager")
+
+[node name="FollowCamera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = -120
+limit_right = 1536
+limit_bottom = 360
+script = ExtResource("5_cam")
+target = NodePath("../Ryn")
+config = ExtResource("6_ccfg")
+
+[node name="CameraShake" type="Node" parent="FollowCamera"]
+script = ExtResource("83_shake")
+
+[node name="GameplayAudio" type="Node" parent="." node_paths=PackedStringArray("ryn", "detection_reset", "checkpoints", "shake", "particles")]
+script = ExtResource("82_ga")
+particles = NodePath("../ParticleBurst")
+ryn = NodePath("../Ryn")
+shake = NodePath("../FollowCamera/CameraShake")
+detection_reset = NodePath("../DetectionReset")
+checkpoints = NodePath("../CheckpointManager")
+
+[node name="SceneTransition" type="CanvasLayer" parent="."]
+script = ExtResource("85_trans")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("84_pause")
+
+[node name="ParticleBurst" type="Node2D" parent="."]
+script = ExtResource("90_part")

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="RynMovementConfig" format=3]
+
+[ext_resource type="Script" path="res://src/player/ryn_movement_config.gd" id="1_cfg"]
+
+[resource]
+script = ExtResource("1_cfg")
+walk_speed = 105.0
+acceleration = 640.0
+deceleration = 900.0
+air_control = 0.6
+sprint_multiplier = 1.62
+sprint_accel_multiplier = 1.35
+sprint_noise_radius = 150.0
+crouch_speed = 44.0
+stand_height = 42.0
+crouch_height = 34.0
+body_width = 10.0
+jump_height = 56.0
+gravity = 900.0
+fall_gravity_multiplier = 1.35
+jump_release_gravity_multiplier = 3.0
+max_fall_speed = 380.0
+coyote_time = 0.08
+jump_buffer_time = 0.1
+air_jumps = 1
+air_jump_height = 34.0
+climb_speed = 40.0
+ladder_jump_scale = 0.7
+climb_step_px = 8.0
+climb_step_pause = 0.06

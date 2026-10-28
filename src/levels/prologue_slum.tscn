@@ -1,0 +1,142 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Script" path="res://src/levels/tower_level.gd" id="1_lvl"]
+[ext_resource type="PackedScene" path="res://src/levels/gray_block.tscn" id="2_blk"]
+[ext_resource type="PackedScene" path="res://src/player/ryn.tscn" id="3_ryn"]
+[ext_resource type="Script" path="res://src/camera/follow_camera.gd" id="4_cam"]
+[ext_resource type="Resource" path="res://assets/data/follow_camera.tres" id="5_ccfg"]
+[ext_resource type="Script" path="res://src/levels/tower_subtitle.gd" id="6_sub"]
+[ext_resource type="Resource" path="res://assets/data/tower_subtitle.tres" id="7_subcfg"]
+[ext_resource type="Script" path="res://src/levels/tower_exit.gd" id="8_exit"]
+[ext_resource type="Script" path="res://src/levels/slum_room_backdrop.gd" id="9_bd"]
+[ext_resource type="Script" path="res://src/levels/window_light.gd" id="10_win"]
+[ext_resource type="Script" path="res://src/levels/prologue_prop.gd" id="11_prop"]
+[ext_resource type="Script" path="res://src/ending/photo_display.gd" id="12_photo"]
+[ext_resource type="Texture2D" path="res://assets/art/photo_sisters.png" id="13_tex"]
+[ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="14_pause"]
+[ext_resource type="Script" path="res://src/ui/scene_transition.gd" id="15_trans"]
+[ext_resource type="Script" path="res://src/dev/demo_state.gd" id="92_demo"]
+[ext_resource type="Script" path="res://src/audio/gameplay_audio.gd" id="16_ga"]
+[ext_resource type="Script" path="res://src/levels/particle_burst.gd" id="17_part"]
+[ext_resource type="Script" path="res://src/audio/ambient_bed.gd" id="97_amb"]
+
+[node name="PrologueSlum" type="Node2D" node_paths=PackedStringArray("subtitle")]
+script = ExtResource("1_lvl")
+entry_line = "「差不多准备好了，是时候出发了」"
+exit_line = ""
+next_scene = "res://src/levels/slum_rooftops.tscn"
+subtitle = NodePath("TowerSubtitle")
+throw_unlocked = false
+
+[node name="DemoState" type="Node" parent="." node_paths=PackedStringArray("ryn", "camera")]
+script = ExtResource("92_demo")
+ryn = NodePath("../Ryn")
+camera = NodePath("../FollowCamera")
+
+[node name="TowerSubtitle" type="CanvasLayer" parent="."]
+script = ExtResource("6_sub")
+config = ExtResource("7_subcfg")
+
+[node name="Backdrop" type="Node2D" parent="." node_paths=PackedStringArray("window")]
+script = ExtResource("9_bd")
+window = NodePath("../Window")
+
+[node name="Floor" parent="." instance=ExtResource("2_blk")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 320)
+size = Vector2(620, 40)
+fill_color = Color(0.207843, 0.164706, 0.121569, 1)
+
+[node name="WallLeft" parent="." instance=ExtResource("2_blk")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-16, -200)
+size = Vector2(16, 552)
+
+[node name="WallRight" parent="." instance=ExtResource("2_blk")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(620, -200)
+size = Vector2(16, 552)
+
+[node name="Ceiling" parent="." instance=ExtResource("2_blk")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 140)
+size = Vector2(620, 16)
+fill_color = Color(0.180392, 0.141176, 0.105882, 1)
+
+[node name="Window" type="Node2D" parent="."]
+position = Vector2(120, 250)
+script = ExtResource("10_win")
+size = Vector2(52, 68)
+light_color = Color(0.784314, 0.831373, 0.878431, 1)
+beam_length = 138.0
+beam_skew = -86.0
+beam_alpha = 0.13
+frame_color = Color(0.101961, 0.0784314, 0.0588235, 1)
+
+[node name="PhotoProp" type="Area2D" parent="." node_paths=PackedStringArray("display", "font", "subtitle")]
+position = Vector2(366, 300)
+script = ExtResource("11_prop")
+size = Vector2(60, 56)
+display = NodePath("../PhotoDisplay")
+font = ExtResource("7_subcfg")
+prompt_text = "E 看照片"
+subtitle = NodePath("../TowerSubtitle")
+objective_line = "潜入高塔。别被看见。"
+
+[node name="Shelf" parent="." instance=ExtResource("2_blk")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 250)
+size = Vector2(56, 10)
+fill_color = Color(0.223529, 0.172549, 0.129412, 1)
+
+[node name="Doorframe" parent="." instance=ExtResource("2_blk")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(560, 180)
+size = Vector2(60, 24)
+fill_color = Color(0.164706, 0.129412, 0.0980392, 1)
+
+[node name="PhotoDisplay" type="CanvasLayer" parent="."]
+script = ExtResource("12_photo")
+photo = ExtResource("13_tex")
+font = ExtResource("7_subcfg")
+caption = "「她说别来找我。」"
+height_ratio = 0.62
+
+[node name="Ryn" parent="." instance=ExtResource("3_ryn")]
+position = Vector2(80, 320)
+
+[node name="TowerExit" type="Area2D" parent="." node_paths=PackedStringArray("level")]
+position = Vector2(580, 320)
+script = ExtResource("8_exit")
+size = Vector2(40, 56)
+level = NodePath("..")
+marker_color = Color(0, 0, 0, 0)
+
+[node name="SceneTransition" type="CanvasLayer" parent="."]
+script = ExtResource("15_trans")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("14_pause")
+font = ExtResource("7_subcfg")
+
+[node name="FollowCamera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = -40
+limit_right = 636
+limit_bottom = 360
+script = ExtResource("4_cam")
+target = NodePath("../Ryn")
+config = ExtResource("5_ccfg")
+
+[node name="ParticleBurst" type="Node2D" parent="."]
+script = ExtResource("17_part")
+
+[node name="GameplayAudio" type="Node" parent="." node_paths=PackedStringArray("ryn", "particles")]
+script = ExtResource("16_ga")
+ryn = NodePath("../Ryn")
+particles = NodePath("../ParticleBurst")
+
+[node name="Ambient" type="Node" parent="."]
+script = ExtResource("97_amb")
+profile = 0

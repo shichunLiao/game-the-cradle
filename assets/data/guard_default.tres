@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="GuardConfig" format=3]
+
+[ext_resource type="Script" path="res://src/guard/guard_config.gd" id="1_gcfg"]
+
+[resource]
+script = ExtResource("1_gcfg")
+body_width = 12.0
+body_height = 48.0
+eye_height = 40.0
+patrol_speed = 46.0
+patrol_wait_time = 1.2
+patrol_arrive_tolerance = 1.5
+gravity = 900.0
+max_fall_speed = 380.0
+cone_range = 170.0
+cone_half_angle_deg = 24.0
+suspicious_cone_range = 140.0
+suspicious_cone_half_angle_deg = 18.0
+cone_segments = 14
+suspicion_duration = 2.5
+patrol_cone_color = Color(0.239216, 0.419608, 0.541176, 1)
+suspicious_cone_color = Color(0.839216, 0.709804, 0.235294, 1)
+spotted_cone_color = Color(0.768627, 0.270588, 0.227451, 1)
+flash_color = Color(0.545098, 0.227451, 0.184314, 1)
+cone_alpha = 0.33
+suspicious_cone_alpha = 0.45
+spotted_cone_alpha = 0.55
+spotted_flash_period = 0.18
+body_color = Color(0.101961, 0.164706, 0.266667, 1)
+rim_color = Color(0.239216, 0.419608, 0.541176, 1)
+alert_body_color = Color(0.545098, 0.227451, 0.184314, 1)

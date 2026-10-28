@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/shadow/shadow_zone.gd" id="1_shz"]
+[ext_resource type="Resource" path="res://assets/data/shadow_default.tres" id="2_shcfg"]
+
+[node name="ShadowZone" type="Area2D"]
+script = ExtResource("1_shz")
+size = Vector2(64, 32)
+config = ExtResource("2_shcfg")

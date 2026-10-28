@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DismantleConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/dismantle/dismantle_config.gd" id="1_dmcfg"]
+
+[resource]
+script = ExtResource("1_dmcfg")
+hold_duration = 1.2
+steps = 4
+reach_padding = 16.0
+noise_radius = 160.0
+prompt_text = "E 拆"
+prompt_font_names = PackedStringArray("PingFang SC", "Hiragino Sans GB", "Heiti SC", "Noto Sans CJK SC", "Microsoft YaHei", "sans-serif")
+prompt_font_size = 18
+prompt_color = Color(0.784314, 0.831373, 0.878431, 1)
+prompt_outline_size = 2
+prompt_outline_color = Color(0.043137, 0.070588, 0.12549, 1)
+prompt_box_width = 112
+prompt_gap = 6
+body_color = Color(0.101961, 0.164706, 0.266667, 1)
+edge_color = Color(0.239216, 0.419608, 0.541176, 1)
+edge_thickness = 1.0
+idle_edge_alpha = 0.45
+near_edge_alpha = 1.0
+slat_width = 1.0
+slat_gap = 3.0
+bolt_radius = 1.0
+remnant_alpha = 0.16
+bar_size = Vector2(30, 3)
+bar_gap = 2.0
+bar_back_color = Color(0.043137, 0.070588, 0.12549, 1)
+bar_fill_color = Color(0.239216, 0.419608, 0.541176, 1)
+bar_step_color = Color(0.784314, 0.831373, 0.878431, 1)
+bar_back_alpha = 0.85

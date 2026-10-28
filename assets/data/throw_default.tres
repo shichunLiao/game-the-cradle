@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ThrowConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/player/throw_config.gd" id="1_thr"]
+
+[resource]
+script = ExtResource("1_thr")
+max_count = 3
+min_distance = 24.0
+max_distance = 208.0
+start_distance = 96.0
+aim_speed = 150.0
+launch_angle_deg = 50.0
+gravity = 700.0
+wall_bounce = 0.35
+max_flight_time = 3.0
+noise_radius = 200.0
+rest_time = 6.0
+hand_height_stand = 30.0
+hand_height_crouch = 18.0

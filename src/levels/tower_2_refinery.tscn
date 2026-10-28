@@ -1,0 +1,1114 @@
+[gd_scene load_steps=64 format=3]
+[ext_resource type="Script" path="res://src/levels/tower_level.gd" id="1_lvl"]
+[ext_resource type="PackedScene" path="res://src/levels/gray_block.tscn" id="2_blk"]
+[ext_resource type="PackedScene" path="res://src/levels/ladder.tscn" id="3_lad"]
+[ext_resource type="PackedScene" path="res://src/player/ryn.tscn" id="4_ryn"]
+[ext_resource type="Script" path="res://src/camera/follow_camera.gd" id="5_cam"]
+[ext_resource type="Resource" path="res://assets/data/follow_camera.tres" id="6_ccfg"]
+[ext_resource type="PackedScene" path="res://src/guard/guard.tscn" id="7_guard"]
+[ext_resource type="Resource" path="res://assets/data/guard_default.tres" id="8_gcfg"]
+[ext_resource type="PackedScene" path="res://src/reset/checkpoint.tscn" id="9_cp"]
+[ext_resource type="Script" path="res://src/reset/checkpoint_manager.gd" id="10_cpm"]
+[ext_resource type="Script" path="res://src/reset/detection_reset.gd" id="11_dr"]
+[ext_resource type="Resource" path="res://assets/data/detection_reset.tres" id="12_drcfg"]
+[ext_resource type="Script" path="res://src/reset/fail_overlay.gd" id="13_ovl"]
+[ext_resource type="Script" path="res://src/reset/ryn_reset_adapter.gd" id="14_rra"]
+[ext_resource type="Script" path="res://src/reset/guard_reset_adapter.gd" id="15_gra"]
+[ext_resource type="PackedScene" path="res://src/shadow/shadow_zone.tscn" id="16_shz"]
+[ext_resource type="Script" path="res://src/shadow/shadow_registry.gd" id="17_shr"]
+[ext_resource type="Resource" path="res://assets/data/shadow_default.tres" id="18_shcfg"]
+[ext_resource type="PackedScene" path="res://src/dismantle/dismantlable.tscn" id="19_dmz"]
+[ext_resource type="Resource" path="res://assets/data/dismantle_default.tres" id="20_dmcfg"]
+[ext_resource type="Script" path="res://src/levels/tower_subtitle.gd" id="21_sub"]
+[ext_resource type="Resource" path="res://assets/data/tower_subtitle.tres" id="22_subcfg"]
+[ext_resource type="Script" path="res://src/levels/tower_exit.gd" id="23_exit"]
+[ext_resource type="Script" path="res://src/levels/gate_light.gd" id="24_gate"]
+[ext_resource type="Script" path="res://src/levels/sweep_light.gd" id="25_sweep"]
+[ext_resource type="Script" path="res://src/dev/dev_route.gd" id="26_route"]
+[ext_resource type="Script" path="res://src/levels/story_trigger.gd" id="27_story"]
+[ext_resource type="Script" path="res://src/levels/story_pickup.gd" id="28_pick"]
+[ext_resource type="Script" path="res://src/levels/terminal_flash.gd" id="29_term"]
+[ext_resource type="Script" path="res://src/levels/pit_wind.gd" id="30_wind"]
+[ext_resource type="Script" path="res://src/levels/guard_fall_line.gd" id="31_fall"]
+[ext_resource type="Script" path="res://src/levels/corrosion_zone.gd" id="32_corr"]
+[ext_resource type="Script" path="res://src/levels/corrosion_haze.gd" id="33_haze"]
+[ext_resource type="Script" path="res://src/audio/ambient_bed.gd" id="34_amb"]
+[ext_resource type="Script" path="res://src/levels/bolt_pickup.gd" id="35_bolt"]
+[ext_resource type="Script" path="res://src/levels/skyline_backdrop.gd" id="36_sky"]
+[ext_resource type="Script" path="res://src/levels/skyline_window.gd" id="37_win"]
+[ext_resource type="Script" path="res://src/levels/vista_zone.gd" id="38_vista"]
+[ext_resource type="Script" path="res://src/levels/warm_window.gd" id="39_warm"]
+[ext_resource type="Script" path="res://src/audio/music_player.gd" id="40_music"]
+[ext_resource type="Script" path="res://src/levels/tower_decor.gd" id="41_decor"]
+[ext_resource type="Script" path="res://src/levels/broadcast_speaker.gd" id="42_pa"]
+[ext_resource type="Script" path="res://src/levels/guard_chat.gd" id="43_chat"]
+[ext_resource type="Script" path="res://src/levels/shutter_door.gd" id="44_shut"]
+[ext_resource type="Script" path="res://src/levels/drop_bridge.gd" id="45_bridge"]
+[ext_resource type="Script" path="res://src/levels/fold_ladder.gd" id="46_fold"]
+[ext_resource type="Script" path="res://src/levels/steam_valve.gd" id="46_steam"]
+[ext_resource type="Script" path="res://src/levels/fuse_box.gd" id="47_fuse"]
+[ext_resource type="Script" path="res://src/levels/corrosion_drain.gd" id="48_drain"]
+[ext_resource type="Script" path="res://src/levels/tower_lamps.gd" id="49_lamps"]
+[ext_resource type="Script" path="res://src/levels/tower_backdrop.gd" id="80_bdrop"]
+[ext_resource type="Script" path="res://src/player/ryn_stealth_visual.gd" id="81_stealth"]
+[ext_resource type="Script" path="res://src/audio/gameplay_audio.gd" id="82_ga"]
+[ext_resource type="Script" path="res://src/camera/camera_shake.gd" id="83_shake"]
+[ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="84_pause"]
+[ext_resource type="Script" path="res://src/ui/scene_transition.gd" id="85_trans"]
+[ext_resource type="Script" path="res://src/guard/guard_behaviour.gd" id="86_beh"]
+[ext_resource type="Script" path="res://src/guard/guard_pursuit.gd" id="87_pur"]
+[ext_resource type="Script" path="res://src/levels/atmosphere.gd" id="89_atmo"]
+[ext_resource type="Script" path="res://src/levels/particle_burst.gd" id="90_part"]
+[ext_resource type="Script" path="res://src/ui/minimap.gd" id="91_map"]
+[ext_resource type="Script" path="res://src/dev/demo_state.gd" id="92_demo"]
+[ext_resource type="PackedScene" path="res://src/levels/hiding_spot.tscn" id="95_hide"]
+
+[node name="Tower2Refinery" type="Node2D" node_paths=PackedStringArray("subtitle")]
+script = ExtResource("1_lvl")
+entry_line = "「这种扣件她教过我怎么处理：拧三下，然后轻轻撬一下就能开了。」"
+exit_line = "「她还在下面，再去别的塔找找线索吧。」"
+next_scene = "res://src/levels/sky_bridge.tscn"
+subtitle = NodePath("TowerSubtitle")
+
+[node name="DemoState" type="Node" parent="." node_paths=PackedStringArray("ryn", "camera")]
+script = ExtResource("92_demo")
+ryn = NodePath("../Ryn")
+camera = NodePath("../FollowCamera")
+
+[node name="TowerSubtitle" type="CanvasLayer" parent="."]
+script = ExtResource("21_sub")
+config = ExtResource("22_subcfg")
+
+[node name="Backdrop" type="Node2D" parent="."]
+script = ExtResource("80_bdrop")
+area = Rect2(0, -64, 1920, 3296)
+seed_value = 22
+stone_color = Color(0.0745098, 0.0509804, 0.0588235, 1)
+mortar_color = Color(0.0392157, 0.0235294, 0.027451, 1)
+depth_color = Color(0.0196078, 0.0313725, 0.0509804, 1)
+glow_color = Color(0.545098, 0.227451, 0.184314, 0.13)
+layer_darken = 0.3
+breaches = 9
+arches = 3
+slits = 4
+niches = 2
+pilaster_spacing = 150
+course_every = 5
+pipes = 12
+pipe_color = Color(0.0862745, 0.141176, 0.227451, 1)
+rubble_count = 44
+rubble_color = Color(0.0901961, 0.0627451, 0.0705882, 1)
+ground_y = 3168.0
+
+[node name="Window00" type="Node2D" parent="."]
+position = Vector2(384, 32)
+script = ExtResource("37_win")
+size = Vector2(1392, 272)
+kind = 1
+level_rect = Rect2(0, 0, 1920, 3232)
+focus_tower = 2
+pan = 0.0
+horizon = 0.5
+
+[node name="Window01" type="Node2D" parent="."]
+position = Vector2(1536, 2528)
+script = ExtResource("37_win")
+size = Vector2(64, 96)
+kind = 0
+level_rect = Rect2(0, 0, 1920, 3232)
+focus_tower = 2
+pan = 0.0
+horizon = 0.5
+
+[node name="Window02" type="Node2D" parent="."]
+position = Vector2(320, 1632)
+script = ExtResource("37_win")
+size = Vector2(64, 96)
+kind = 0
+level_rect = Rect2(0, 0, 1920, 3232)
+focus_tower = 2
+pan = 0.0
+horizon = 0.5
+
+[node name="Block000" parent="." instance=ExtResource("2_blk")]
+position = Vector2(0, 0)
+size = Vector2(1920, 32)
+
+[node name="Block001" parent="." instance=ExtResource("2_blk")]
+position = Vector2(0, 32)
+size = Vector2(16, 3200)
+
+[node name="Block002" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1904, 32)
+size = Vector2(16, 3200)
+
+[node name="Block003" parent="." instance=ExtResource("2_blk")]
+position = Vector2(720, 160)
+size = Vector2(416, 16)
+style = 5
+
+[node name="Block004" parent="." instance=ExtResource("2_blk")]
+position = Vector2(128, 304)
+size = Vector2(720, 16)
+style = 5
+
+[node name="Block005" parent="." instance=ExtResource("2_blk")]
+position = Vector2(880, 352)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block006" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1008, 400)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block007" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1136, 448)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block008" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1264, 496)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block009" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1392, 544)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block010" parent="." instance=ExtResource("2_blk")]
+position = Vector2(16, 592)
+size = Vector2(1648, 32)
+style = 5
+
+[node name="Block011" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1680, 592)
+size = Vector2(224, 32)
+style = 5
+
+[node name="Block012" parent="." instance=ExtResource("2_blk")]
+position = Vector2(16, 832)
+size = Vector2(80, 32)
+style = 5
+
+[node name="Block013" parent="." instance=ExtResource("2_blk")]
+position = Vector2(112, 832)
+size = Vector2(1792, 32)
+style = 5
+
+[node name="Block014" parent="." instance=ExtResource("2_blk")]
+position = Vector2(16, 1040)
+size = Vector2(1584, 32)
+style = 5
+
+[node name="Block015" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1616, 1040)
+size = Vector2(288, 32)
+style = 5
+
+[node name="Block016" parent="." instance=ExtResource("2_blk")]
+position = Vector2(784, 1200)
+size = Vector2(336, 16)
+style = 5
+
+[node name="Block017" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1184, 1200)
+size = Vector2(496, 16)
+style = 5
+
+[node name="Block018" parent="." instance=ExtResource("2_blk")]
+position = Vector2(112, 1344)
+size = Vector2(560, 16)
+style = 5
+
+[node name="Block019" parent="." instance=ExtResource("2_blk")]
+position = Vector2(688, 1344)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block020" parent="." instance=ExtResource("2_blk")]
+position = Vector2(640, 1488)
+size = Vector2(544, 16)
+style = 5
+
+[node name="Block021" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1200, 1488)
+size = Vector2(64, 16)
+style = 5
+
+[node name="Block022" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1152, 1632)
+size = Vector2(576, 16)
+style = 5
+
+[node name="Block023" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1744, 1632)
+size = Vector2(64, 16)
+style = 5
+
+[node name="Block024" parent="." instance=ExtResource("2_blk")]
+position = Vector2(16, 1776)
+size = Vector2(1776, 32)
+style = 5
+
+[node name="Block025" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1808, 1776)
+size = Vector2(80, 32)
+style = 5
+
+[node name="Block026" parent="." instance=ExtResource("2_blk")]
+position = Vector2(16, 2064)
+size = Vector2(368, 32)
+style = 5
+
+[node name="Block027" parent="." instance=ExtResource("2_blk")]
+position = Vector2(400, 2064)
+size = Vector2(96, 32)
+style = 5
+
+[node name="Block028" parent="." instance=ExtResource("2_blk")]
+position = Vector2(544, 2064)
+size = Vector2(32, 32)
+style = 5
+
+[node name="Block029" parent="." instance=ExtResource("2_blk")]
+position = Vector2(592, 2064)
+size = Vector2(208, 32)
+style = 5
+
+[node name="Block030" parent="." instance=ExtResource("2_blk")]
+position = Vector2(912, 2064)
+size = Vector2(48, 32)
+style = 5
+
+[node name="Block031" parent="." instance=ExtResource("2_blk")]
+position = Vector2(976, 2064)
+size = Vector2(912, 32)
+style = 5
+
+[node name="Block032" parent="." instance=ExtResource("2_blk")]
+position = Vector2(32, 2224)
+size = Vector2(288, 32)
+style = 5
+
+[node name="Block033" parent="." instance=ExtResource("2_blk")]
+position = Vector2(336, 2224)
+size = Vector2(1568, 32)
+style = 5
+
+[node name="Block034" parent="." instance=ExtResource("2_blk")]
+position = Vector2(256, 2448)
+size = Vector2(352, 16)
+style = 5
+
+[node name="Block035" parent="." instance=ExtResource("2_blk")]
+position = Vector2(672, 2448)
+size = Vector2(256, 16)
+style = 5
+
+[node name="Block036" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1120, 2512)
+size = Vector2(736, 16)
+style = 5
+
+[node name="Block037" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1872, 2512)
+size = Vector2(16, 16)
+style = 5
+
+[node name="Block038" parent="." instance=ExtResource("2_blk")]
+position = Vector2(16, 2672)
+size = Vector2(1808, 32)
+style = 5
+
+[node name="Block039" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1840, 2672)
+size = Vector2(64, 32)
+style = 5
+
+[node name="Block040" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1696, 2832)
+size = Vector2(176, 16)
+style = 5
+
+[node name="Block041" parent="." instance=ExtResource("2_blk")]
+position = Vector2(32, 2880)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block042" parent="." instance=ExtResource("2_blk")]
+position = Vector2(144, 2880)
+size = Vector2(768, 16)
+style = 5
+
+[node name="Block043" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1568, 2880)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block044" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1440, 2928)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block045" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1312, 2976)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block046" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1184, 3024)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block047" parent="." instance=ExtResource("2_blk")]
+position = Vector2(1056, 3072)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block048" parent="." instance=ExtResource("2_blk")]
+position = Vector2(928, 3120)
+size = Vector2(96, 16)
+style = 5
+
+[node name="Block049" parent="." instance=ExtResource("2_blk")]
+position = Vector2(16, 3168)
+size = Vector2(1888, 64)
+style = 5
+
+[node name="Ladder00_44" parent="." instance=ExtResource("3_lad")]
+position = Vector2(704, 160)
+size = Vector2(16, 144)
+
+[node name="Ladder01_104" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1664, 592)
+size = Vector2(16, 240)
+
+[node name="Ladder02_6" parent="." instance=ExtResource("3_lad")]
+position = Vector2(96, 832)
+size = Vector2(16, 208)
+
+[node name="Ladder03_100" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1600, 1040)
+size = Vector2(16, 160)
+
+[node name="Ladder04_48" parent="." instance=ExtResource("3_lad")]
+position = Vector2(768, 1200)
+size = Vector2(16, 144)
+
+[node name="Ladder05_42" parent="." instance=ExtResource("3_lad")]
+position = Vector2(672, 1344)
+size = Vector2(16, 144)
+
+[node name="Ladder06_74" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1184, 1488)
+size = Vector2(16, 144)
+
+[node name="Ladder07_108" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1728, 1632)
+size = Vector2(16, 144)
+
+[node name="Ladder08_112" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1792, 1776)
+size = Vector2(16, 288)
+
+[node name="Ladder09_118" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1888, 1776)
+size = Vector2(16, 448)
+
+[node name="Ladder10_24" parent="." instance=ExtResource("3_lad")]
+position = Vector2(384, 2064)
+size = Vector2(16, 160)
+
+[node name="Ladder11_36" parent="." instance=ExtResource("3_lad")]
+position = Vector2(576, 2064)
+size = Vector2(16, 160)
+
+[node name="Ladder12_50" parent="." instance=ExtResource("3_lad")]
+position = Vector2(800, 2064)
+size = Vector2(16, 160)
+
+[node name="Ladder13_60" parent="." instance=ExtResource("3_lad")]
+position = Vector2(960, 2064)
+size = Vector2(16, 160)
+
+[node name="Ladder14_1" parent="." instance=ExtResource("3_lad")]
+position = Vector2(16, 2224)
+size = Vector2(16, 448)
+
+[node name="Ladder15_20" parent="." instance=ExtResource("3_lad")]
+position = Vector2(320, 2224)
+size = Vector2(16, 224)
+
+[node name="Ladder16_58" parent="." instance=ExtResource("3_lad")]
+position = Vector2(928, 2448)
+size = Vector2(16, 224)
+
+[node name="Ladder17_116" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1856, 2512)
+size = Vector2(16, 160)
+
+[node name="Ladder18_114" parent="." instance=ExtResource("3_lad")]
+position = Vector2(1824, 2672)
+size = Vector2(16, 160)
+
+[node name="Ladder19_8" parent="." instance=ExtResource("3_lad")]
+position = Vector2(128, 2880)
+size = Vector2(16, 288)
+
+[node name="Hatch00" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(1120, 1200)
+size = Vector2(64, 16)
+kind = 0
+config = ExtResource("20_dmcfg")
+
+[node name="Hatch01" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(608, 2448)
+size = Vector2(64, 16)
+kind = 0
+config = ExtResource("20_dmcfg")
+
+[node name="Fence00" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(1664, 2016)
+size = Vector2(16, 48)
+kind = 1
+config = ExtResource("20_dmcfg")
+
+[node name="Fence01" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(576, 2832)
+size = Vector2(16, 48)
+kind = 1
+config = ExtResource("20_dmcfg")
+
+[node name="Shadow000" parent="." instance=ExtResource("16_shz")]
+position = Vector2(640, 208)
+size = Vector2(176, 96)
+
+[node name="Shadow001" parent="." instance=ExtResource("16_shz")]
+position = Vector2(480, 944)
+size = Vector2(96, 96)
+
+[node name="Shadow002" parent="." instance=ExtResource("16_shz")]
+position = Vector2(1344, 944)
+size = Vector2(96, 96)
+
+[node name="Shadow003" parent="." instance=ExtResource("16_shz")]
+position = Vector2(784, 1152)
+size = Vector2(96, 48)
+
+[node name="Shadow004" parent="." instance=ExtResource("16_shz")]
+position = Vector2(96, 1264)
+size = Vector2(400, 80)
+
+[node name="Shadow005" parent="." instance=ExtResource("16_shz")]
+position = Vector2(640, 1408)
+size = Vector2(144, 80)
+
+[node name="Shadow006" parent="." instance=ExtResource("16_shz")]
+position = Vector2(1440, 1552)
+size = Vector2(368, 80)
+
+[node name="Shadow007" parent="." instance=ExtResource("16_shz")]
+position = Vector2(992, 1968)
+size = Vector2(80, 96)
+
+[node name="Shadow008" parent="." instance=ExtResource("16_shz")]
+position = Vector2(640, 2096)
+size = Vector2(496, 128)
+
+[node name="Shadow009" parent="." instance=ExtResource("16_shz")]
+position = Vector2(1152, 2416)
+size = Vector2(704, 96)
+
+[node name="Shadow010" parent="." instance=ExtResource("16_shz")]
+position = Vector2(16, 2544)
+size = Vector2(896, 128)
+
+[node name="Shadow011" parent="." instance=ExtResource("16_shz")]
+position = Vector2(1056, 2576)
+size = Vector2(80, 96)
+
+[node name="Shadow012" parent="." instance=ExtResource("16_shz")]
+position = Vector2(1728, 2736)
+size = Vector2(160, 96)
+
+[node name="Shadow013" parent="." instance=ExtResource("16_shz")]
+position = Vector2(32, 2784)
+size = Vector2(720, 96)
+
+[node name="Shadow014" parent="." instance=ExtResource("16_shz")]
+position = Vector2(192, 3072)
+size = Vector2(80, 96)
+
+[node name="Decor00" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("tank", "chain", "chain", "chain", "work_lamp:on", "gauge", "gauge", "warn_lamp:on")
+rects = PackedFloat32Array(128, 263, 30, 41, 102, 32, 6, 28, 275, 320, 6, 29, 358, 320, 6, 18, 468, 320, 12, 19, 192, 240, 11, 16, 275, 222, 11, 18, 1157, 375, 8, 9)
+
+[node name="Decor01" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("valve", "tank", "barrel", "valve", "barrel", "valve", "barrel", "barrel", "valve", "valve", "valve", "chain", "chain", "warn_lamp", "pipe_run", "gauge", "gauge", "pipe_run", "gauge", "warn_lamp:on", "gauge", "warn_lamp:on", "pipe_run")
+rects = PackedFloat32Array(1216, 430, 12, 18, 32, 555, 26, 37, 242, 577, 11, 15, 434, 576, 13, 16, 676, 576, 11, 16, 896, 575, 13, 17, 995, 576, 11, 16, 1088, 577, 12, 15, 1216, 573, 13, 19, 1537, 576, 12, 16, 1746, 575, 12, 17, 695, 624, 6, 22, 1880, 624, 6, 27, 677, 743, 7, 9, 1385, 516, 119, 6, 611, 497, 10, 14, 628, 544, 10, 16, 392, 753, 120, 6, 1280, 402, 9, 14, 1846, 549, 8, 10, 1190, 545, 10, 15, 1249, 531, 8, 9, 131, 536, 146, 6)
+
+[node name="Decor02" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("riser", "barrel", "valve", "barrel", "tank", "valve", "barrel", "barrel", "barrel", "barrel", "tank", "tank", "barrel", "tank", "barrel", "tank", "tank", "tank", "chain", "work_lamp:on", "chain", "work_lamp:on", "chain", "work_lamp:on", "work_lamp", "work_lamp:on", "cable", "cable", "cable", "cable", "pipe_run", "warn_lamp", "gauge", "warn_lamp:on", "gauge", "gauge", "warn_lamp:on", "warn_lamp", "gauge", "gauge", "work_lamp:dead", "work_lamp:dead", "work_lamp:dead")
+rects = PackedFloat32Array(869, 864, 6, 176, 306, 817, 11, 15, 434, 816, 14, 16, 785, 817, 13, 15, 1087, 793, 33, 39, 1218, 813, 14, 19, 1412, 816, 12, 16, 1698, 817, 13, 15, 1844, 817, 12, 15, 181, 1024, 11, 16, 291, 1004, 29, 36, 482, 1001, 33, 39, 1011, 1024, 11, 16, 1120, 1000, 30, 40, 1249, 1025, 11, 15, 1397, 1003, 26, 37, 1493, 1004, 26, 36, 1736, 1001, 34, 39, 905, 864, 6, 21, 1346, 864, 10, 18, 1428, 864, 6, 28, 1888, 864, 11, 22, 96, 1072, 6, 26, 210, 1072, 10, 18, 1123, 1072, 10, 15, 1328, 1072, 11, 14, 536, 864, 112, 7, 1560, 864, 112, 7, 1384, 1072, 192, 15, 1640, 1072, 112, 8, 679, 775, 117, 6, 883, 1121, 8, 10, 1027, 976, 11, 15, 918, 1105, 8, 10, 1152, 960, 11, 14, 1682, 955, 9, 17, 1859, 786, 8, 9, 835, 966, 8, 10, 1330, 972, 10, 18, 566, 768, 10, 16, 514, 864, 11, 18, 1378, 864, 11, 18, 818, 1072, 11, 18)
+
+[node name="Decor03" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("valve", "barrel", "barrel", "valve", "tank", "valve", "valve", "barrel", "valve", "chain", "work_lamp", "chain", "chain", "work_lamp", "chain", "work_lamp:on", "work_lamp", "cable", "pipe_run", "warn_lamp", "warn_lamp", "gauge", "warn_lamp:on", "gauge", "gauge", "gauge", "gauge", "warn_lamp:on", "warn_lamp:dead", "work_lamp:dead")
+rects = PackedFloat32Array(881, 1181, 12, 19, 1041, 1184, 11, 16, 1316, 1185, 12, 15, 147, 1326, 13, 18, 403, 1309, 27, 35, 532, 1325, 12, 19, 641, 1327, 12, 17, 867, 1472, 13, 16, 1218, 1468, 12, 20, 1024, 1216, 6, 23, 1252, 1216, 12, 16, 1552, 1216, 6, 27, 231, 1360, 6, 29, 757, 1360, 10, 21, 920, 1504, 6, 29, 976, 1504, 10, 14, 1121, 1504, 11, 21, 536, 1360, 112, 14, 1267, 1153, 101, 6, 1395, 1152, 8, 10, 807, 1392, 7, 10, 1202, 1426, 9, 14, 689, 1271, 8, 9, 293, 1297, 10, 15, 1639, 1528, 9, 18, 1056, 1152, 10, 16, 517, 1281, 9, 14, 582, 1248, 8, 9, 292, 1270, 8, 10, 706, 1360, 11, 18)
+
+[node name="Decor04" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("tank", "valve", "barrel", "barrel", "barrel", "barrel", "barrel", "valve", "valve", "work_lamp", "chain", "chain", "chain", "gauge", "pipe_run", "pipe_run", "gauge", "gauge", "gauge", "pipe_run", "pipe_run", "pipe_run", "gauge")
+rects = PackedFloat32Array(1475, 1591, 29, 41, 689, 1757, 13, 19, 821, 1760, 11, 16, 899, 1760, 13, 16, 961, 1760, 11, 16, 1075, 1761, 12, 15, 1344, 1761, 13, 15, 1443, 1758, 13, 18, 1697, 1756, 12, 20, 1476, 1648, 12, 18, 1624, 1648, 6, 20, 305, 1808, 6, 21, 1440, 1808, 6, 26, 1252, 1684, 10, 17, 1690, 1561, 82, 6, 1332, 1714, 139, 6, 498, 1715, 10, 18, 64, 1681, 11, 15, 897, 1680, 9, 16, 1113, 1738, 81, 6, 499, 1688, 107, 6, 928, 1689, 112, 6, 1381, 1674, 10, 17)
+
+[node name="Decor05" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("valve", "barrel", "barrel", "valve", "valve", "barrel", "valve", "barrel", "valve", "barrel", "chain", "work_lamp", "work_lamp:on", "work_lamp:on", "work_lamp:on", "chain", "chain", "work_lamp:on", "chain", "work_lamp:on", "work_lamp:on", "cable", "gauge", "warn_lamp:on", "warn_lamp:on", "gauge", "gauge", "gauge", "gauge", "gauge", "pipe_run", "pipe_run", "warn_lamp:dead", "warn_lamp:dead")
+rects = PackedFloat32Array(16, 2047, 12, 17, 211, 2048, 13, 16, 325, 2049, 11, 15, 1601, 2047, 14, 17, 1857, 2044, 12, 20, 610, 2209, 13, 15, 932, 2205, 12, 19, 1120, 2209, 13, 15, 1249, 2206, 14, 18, 1445, 2208, 11, 16, 433, 2096, 6, 28, 1171, 2096, 12, 21, 1253, 2096, 10, 16, 1734, 2096, 10, 17, 1809, 2096, 10, 17, 133, 2256, 6, 27, 232, 2256, 6, 28, 787, 2256, 10, 20, 1111, 2256, 6, 21, 1200, 2256, 11, 19, 1392, 2256, 12, 18, 888, 2256, 160, 10, 1444, 2154, 9, 18, 662, 1991, 8, 9, 760, 2019, 7, 9, 1698, 2016, 10, 16, 934, 2160, 9, 16, 982, 1971, 10, 17, 1093, 2123, 11, 18, 1248, 2161, 11, 14, 1366, 1975, 104, 6, 68, 2022, 87, 6, 1028, 1974, 8, 10, 884, 2102, 8, 10)
+
+[node name="Decor06" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("valve", "barrel", "valve", "tank", "tank", "barrel", "valve", "barrel", "barrel", "barrel", "barrel", "barrel", "valve", "chain", "work_lamp", "chain", "work_lamp", "work_lamp", "chain", "gauge", "warn_lamp", "gauge", "warn_lamp", "warn_lamp", "gauge", "gauge", "pipe_run", "warn_lamp:on", "pipe_run", "warn_lamp:dead")
+rects = PackedFloat32Array(384, 2429, 14, 19, 545, 2432, 13, 16, 706, 2429, 12, 19, 1232, 2474, 32, 38, 1393, 2476, 31, 36, 1523, 2496, 11, 16, 1827, 2493, 12, 19, 528, 2657, 12, 15, 672, 2657, 12, 15, 881, 2657, 11, 15, 995, 2656, 11, 16, 1057, 2657, 13, 15, 1267, 2655, 13, 17, 487, 2464, 6, 22, 594, 2464, 12, 21, 1350, 2528, 6, 25, 1408, 2528, 11, 16, 1648, 2528, 11, 19, 1768, 2528, 6, 25, 1367, 2464, 9, 16, 725, 2611, 7, 10, 672, 2625, 11, 14, 433, 2595, 8, 10, 1479, 2420, 7, 10, 599, 2615, 9, 18, 1060, 2592, 11, 15, 1729, 2424, 138, 6, 499, 2375, 8, 9, 1569, 2451, 158, 6, 1092, 2582, 8, 10)
+
+[node name="Decor07" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("riser", "tank", "valve", "barrel", "valve", "valve", "work_lamp:on", "work_lamp:on", "chain", "chain", "work_lamp:on", "chain", "chain", "chain", "pipe_run", "pipe_run", "gauge", "gauge", "gauge", "pipe_run", "gauge", "warn_lamp", "pipe_run", "gauge", "work_lamp:dead")
+rects = PackedFloat32Array(245, 2704, 6, 176, 35, 2844, 27, 36, 370, 2862, 13, 18, 884, 2864, 11, 16, 1392, 2959, 13, 17, 1248, 3004, 12, 20, 323, 2704, 10, 15, 720, 2704, 11, 18, 1066, 2704, 6, 20, 1123, 2704, 6, 27, 1571, 2704, 10, 15, 1704, 2704, 6, 26, 682, 2896, 6, 18, 1188, 3040, 6, 25, 898, 2826, 110, 6, 1522, 2839, 105, 6, 1731, 3067, 9, 17, 1765, 3069, 10, 17, 305, 2832, 9, 14, 1510, 2871, 136, 6, 662, 2792, 10, 18, 288, 2788, 8, 9, 432, 2840, 128, 6, 885, 2770, 11, 18, 1794, 2704, 11, 18)
+
+[node name="Decor08" type="Node2D" parent="."]
+script = ExtResource("41_decor")
+kinds = PackedStringArray("tank", "barrel", "barrel", "tank", "barrel", "valve", "barrel", "barrel", "pipe_run", "pipe_run", "pipe_run", "warn_lamp", "pipe_run", "gauge", "gauge", "pipe_run", "warn_lamp:on", "pipe_run")
+rects = PackedFloat32Array(946, 3082, 26, 38, 386, 3153, 13, 15, 562, 3152, 13, 16, 689, 3134, 30, 34, 756, 3153, 12, 15, 912, 3152, 14, 16, 1730, 3153, 12, 15, 1844, 3153, 11, 15, 1664, 3127, 80, 6, 384, 3111, 155, 6, 1456, 3108, 147, 6, 211, 3092, 7, 10, 1490, 3073, 105, 6, 885, 3120, 10, 16, 1234, 3120, 11, 16, 770, 3080, 149, 6, 1681, 3088, 8, 10, 1273, 3110, 113, 6)
+
+[node name="Lamps" type="Node2D" parent="."]
+script = ExtResource("49_lamps")
+points = PackedVector2Array(474, 339, 1351, 882, 1894, 886, 215, 1090, 1334, 1086, 981, 1518, 1258, 2112, 1739, 2113, 1814, 2113, 792, 2276, 1206, 2275, 1398, 2274, 328, 2719, 726, 2722, 1576, 2719, 1161, 379, 1850, 554, 1253, 535, 922, 1110, 1863, 790, 693, 1275, 586, 1252, 666, 1995, 764, 2023, 503, 2379, 1685, 3092)
+radii = PackedFloat32Array(46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 46.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0)
+colors = PackedStringArray("cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "cyan", "rust", "rust", "rust", "rust", "rust", "rust", "rust", "rust", "rust", "rust", "rust")
+flickers = PackedStringArray("steady", "steady", "steady", "steady", "steady", "steady", "steady", "steady", "steady", "steady", "steady", "steady", "steady", "steady", "steady", "emergency", "emergency", "emergency", "emergency", "emergency", "emergency", "emergency", "emergency", "emergency", "emergency", "emergency")
+squashes = PackedFloat32Array(0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+fuses = PackedStringArray("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+
+[node name="ShadowRegistry" type="Node" parent="."]
+script = ExtResource("17_shr")
+config = ExtResource("18_shcfg")
+
+[node name="Checkpoint00" parent="." instance=ExtResource("9_cp")]
+position = Vector2(72, 3168)
+
+[node name="Checkpoint01" parent="." instance=ExtResource("9_cp")]
+position = Vector2(1768, 2832)
+
+[node name="Checkpoint02" parent="." instance=ExtResource("9_cp")]
+position = Vector2(1768, 2672)
+
+[node name="Checkpoint03" parent="." instance=ExtResource("9_cp")]
+position = Vector2(424, 2448)
+
+[node name="Checkpoint04" parent="." instance=ExtResource("9_cp")]
+position = Vector2(360, 2224)
+
+[node name="Checkpoint05" parent="." instance=ExtResource("9_cp")]
+position = Vector2(712, 2064)
+
+[node name="Checkpoint06" parent="." instance=ExtResource("9_cp")]
+position = Vector2(1768, 1776)
+
+[node name="Checkpoint07" parent="." instance=ExtResource("9_cp")]
+position = Vector2(840, 1200)
+
+[node name="Checkpoint08" parent="." instance=ExtResource("9_cp")]
+position = Vector2(1544, 1040)
+
+[node name="Checkpoint09" parent="." instance=ExtResource("9_cp")]
+position = Vector2(168, 832)
+
+[node name="Checkpoint10" parent="." instance=ExtResource("9_cp")]
+position = Vector2(1672, 592)
+
+[node name="Broadcast00" type="Node2D" parent="." node_paths=PackedStringArray("subtitle")]
+position = Vector2(162, 2136)
+script = ExtResource("42_pa")
+text = "〔广播〕V-11 到 V-20 号，零点到坑口转运站集合。"
+trigger_rect = Rect2(-98, 40, 304, 48)
+subtitle = NodePath("../TowerSubtitle")
+
+[node name="Pickup00" type="Area2D" parent="." node_paths=PackedStringArray("subtitle")]
+position = Vector2(776, 304)
+script = ExtResource("28_pick")
+text = "「这不是她的工装V-17吗。」"
+subtitle = NodePath("../TowerSubtitle")
+
+[node name="Ryn" parent="." instance=ExtResource("4_ryn")]
+position = Vector2(72, 3168)
+
+[node name="GuardA" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(328, 3168)
+config = ExtResource("8_gcfg")
+patrol_offset = 544.0
+initial_facing = 1
+sense = 0
+
+[node name="Pursuit" type="Node" parent="GuardA"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardA"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardA"]
+script = ExtResource("86_beh")
+style = 0
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardB" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(1672, 2672)
+config = ExtResource("8_gcfg")
+patrol_offset = -480.0
+initial_facing = -1
+sense = 0
+
+[node name="Pursuit" type="Node" parent="GuardB"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardB"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardB"]
+script = ExtResource("86_beh")
+style = 1
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardC" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(392, 2448)
+config = ExtResource("8_gcfg")
+patrol_offset = 480.0
+initial_facing = 1
+sense = 0
+
+[node name="Pursuit" type="Node" parent="GuardC"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardC"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardC"]
+script = ExtResource("86_beh")
+style = 2
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardE" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(1160, 2224)
+config = ExtResource("8_gcfg")
+patrol_offset = 512.0
+initial_facing = 1
+sense = 1
+
+[node name="Pursuit" type="Node" parent="GuardE"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardE"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardE"]
+script = ExtResource("86_beh")
+style = 2
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardD" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(1032, 2064)
+config = ExtResource("8_gcfg")
+patrol_offset = 544.0
+initial_facing = 1
+sense = 0
+
+[node name="Pursuit" type="Node" parent="GuardD"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardD"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardD"]
+script = ExtResource("86_beh")
+style = 1
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardF" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(712, 1488)
+config = ExtResource("8_gcfg")
+patrol_offset = 416.0
+initial_facing = 1
+sense = 0
+
+[node name="Pursuit" type="Node" parent="GuardF"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardF"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardF"]
+script = ExtResource("86_beh")
+style = 1
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardG" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(904, 1200)
+config = ExtResource("8_gcfg")
+patrol_offset = 640.0
+initial_facing = 1
+sense = 0
+
+[node name="Pursuit" type="Node" parent="GuardG"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardG"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardG"]
+script = ExtResource("86_beh")
+style = 0
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardV1" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(648, 1040)
+config = ExtResource("8_gcfg")
+patrol_offset = 640.0
+initial_facing = 1
+sense = 1
+
+[node name="Pursuit" type="Node" parent="GuardV1"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardV1"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardV1"]
+script = ExtResource("86_beh")
+style = 2
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardS1" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(808, 832)
+config = ExtResource("8_gcfg")
+patrol_offset = 0.0
+initial_facing = -1
+sense = 0
+
+[node name="Pursuit" type="Node" parent="GuardS1"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardS1"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardS1"]
+script = ExtResource("86_beh")
+style = 0
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardS2" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(1512, 832)
+config = ExtResource("8_gcfg")
+patrol_offset = 0.0
+initial_facing = -1
+sense = 0
+
+[node name="Pursuit" type="Node" parent="GuardS2"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardS2"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardS2"]
+script = ExtResource("86_beh")
+style = 0
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="GuardH" parent="." instance=ExtResource("7_guard")]
+groups = ["guard_audio"]
+position = Vector2(200, 304)
+config = ExtResource("8_gcfg")
+patrol_offset = 384.0
+initial_facing = 1
+sense = 1
+
+[node name="Pursuit" type="Node" parent="GuardH"]
+script = ExtResource("87_pur")
+chase_enabled = false
+hearing_scale = 1.0
+
+[node name="ResetAdapter" type="Node" parent="GuardH"]
+script = ExtResource("15_gra")
+
+[node name="Behaviour" type="Node" parent="GuardH"]
+script = ExtResource("86_beh")
+style = 3
+speed_scale = 1.0
+range_scale = 1.0
+
+[node name="Locker00" parent="." instance=ExtResource("95_hide")]
+position = Vector2(604, 3120)
+
+[node name="Locker01" parent="." instance=ExtResource("95_hide")]
+position = Vector2(924, 1440)
+
+[node name="Locker02" parent="." instance=ExtResource("95_hide")]
+position = Vector2(956, 992)
+
+[node name="Locker03" parent="." instance=ExtResource("95_hide")]
+position = Vector2(476, 256)
+
+[node name="Vent00A" parent="." node_paths=PackedStringArray("link") instance=ExtResource("95_hide")]
+position = Vector2(94, 2658)
+kind = 1
+size = Vector2(20, 14)
+link = NodePath("../Vent00B")
+enter_noise = 60.0
+
+[node name="Vent00B" parent="." node_paths=PackedStringArray("link") instance=ExtResource("95_hide")]
+position = Vector2(94, 2210)
+kind = 1
+size = Vector2(20, 14)
+link = NodePath("../Vent00A")
+enter_noise = 60.0
+
+[node name="Panel00" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(528, 796)
+size = Vector2(16, 16)
+kind = 2
+look = 2
+config = ExtResource("20_dmcfg")
+
+[node name="Panel01" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(1152, 796)
+size = Vector2(16, 16)
+kind = 2
+look = 2
+config = ExtResource("20_dmcfg")
+
+[node name="Panel02" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(176, 1740)
+size = Vector2(16, 16)
+kind = 2
+look = 1
+config = ExtResource("20_dmcfg")
+
+[node name="Panel03" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(1760, 2188)
+size = Vector2(16, 16)
+kind = 2
+look = 4
+config = ExtResource("20_dmcfg")
+
+[node name="Panel04" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(1792, 3132)
+size = Vector2(16, 16)
+kind = 2
+look = 1
+config = ExtResource("20_dmcfg")
+
+[node name="Panel05" parent="." instance=ExtResource("19_dmz")]
+position = Vector2(672, 2188)
+size = Vector2(16, 16)
+kind = 2
+look = 4
+config = ExtResource("20_dmcfg")
+
+[node name="Steam00" type="Node2D" parent="." node_paths=PackedStringArray("panel")]
+script = ExtResource("46_steam")
+panel = NodePath("../Panel00")
+cloud_rect = Rect2(576, 736, 304, 96)
+duration = 6.0
+
+[node name="Steam01" type="Node2D" parent="." node_paths=PackedStringArray("panel")]
+script = ExtResource("46_steam")
+panel = NodePath("../Panel01")
+cloud_rect = Rect2(1280, 736, 304, 96)
+duration = 6.0
+
+[node name="FoldLadder00" type="Area2D" parent="." node_paths=PackedStringArray("panel")]
+position = Vector2(96, 1344)
+script = ExtResource("46_fold")
+size = Vector2(16, 432)
+slab_px = 16.0
+anchor = Vector2(184, 1748)
+noise_radius = 220.0
+panel = NodePath("../Panel02")
+
+[node name="Shutter00" type="Node2D" parent="." node_paths=PackedStringArray("panel")]
+position = Vector2(1872, 2096)
+script = ExtResource("44_shut")
+size = Vector2(16, 128)
+panel = NodePath("../Panel03")
+
+[node name="FoldLadder01" type="Area2D" parent="." node_paths=PackedStringArray("panel")]
+position = Vector2(1872, 2832)
+script = ExtResource("46_fold")
+size = Vector2(16, 336)
+slab_px = 16.0
+anchor = Vector2(1800, 3140)
+noise_radius = 220.0
+panel = NodePath("../Panel04")
+
+[node name="Shutter01" type="Node2D" parent="." node_paths=PackedStringArray("panel")]
+position = Vector2(784, 2096)
+script = ExtResource("44_shut")
+size = Vector2(16, 128)
+panel = NodePath("../Panel05")
+
+[node name="Gate00" type="Node2D" parent="." node_paths=PackedStringArray("detection_reset", "ryn")]
+position = Vector2(16, 2672)
+script = ExtResource("24_gate")
+size = Vector2(32, 80)
+red_time = 2.6
+green_time = 2.8
+phase_offset = 0.45
+detection_reset = NodePath("../DetectionReset")
+ryn = NodePath("../Ryn")
+
+[node name="Vista00" type="Area2D" parent="." node_paths=PackedStringArray("camera", "subtitle")]
+position = Vector2(896, 112)
+script = ExtResource("38_vista")
+size = Vector2(224, 48)
+zoom_level = 1.0
+offset = Vector2(0, -100)
+text = ""
+camera = NodePath("../FollowCamera")
+subtitle = NodePath("../TowerSubtitle")
+
+[node name="GuardFallLine" type="Node" parent="." node_paths=PackedStringArray("subtitle")]
+script = ExtResource("31_fall")
+text = "「啊，对不起。……不对，我干嘛道歉呢。」"
+subtitle = NodePath("../TowerSubtitle")
+
+[node name="TowerExit" type="Area2D" parent="." node_paths=PackedStringArray("level")]
+position = Vector2(976, 160)
+script = ExtResource("23_exit")
+size = Vector2(48, 56)
+level = NodePath("..")
+
+[node name="RynStealthVisual" type="Node" parent="." node_paths=PackedStringArray("ryn", "shadows")]
+script = ExtResource("81_stealth")
+ryn = NodePath("../Ryn")
+shadows = NodePath("../ShadowRegistry")
+
+[node name="RynResetAdapter" type="Node" parent="." node_paths=PackedStringArray("ryn")]
+script = ExtResource("14_rra")
+ryn = NodePath("../Ryn")
+
+[node name="CheckpointManager" type="Node" parent="." node_paths=PackedStringArray("ryn")]
+script = ExtResource("10_cpm")
+ryn = NodePath("../Ryn")
+
+[node name="FailOverlay" type="CanvasLayer" parent="."]
+script = ExtResource("13_ovl")
+config = ExtResource("12_drcfg")
+
+[node name="DetectionReset" type="Node" parent="." node_paths=PackedStringArray("ryn", "overlay", "checkpoints")]
+script = ExtResource("11_dr")
+config = ExtResource("12_drcfg")
+ryn = NodePath("../Ryn")
+overlay = NodePath("../FailOverlay")
+checkpoints = NodePath("../CheckpointManager")
+
+[node name="FollowCamera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = -64
+limit_right = 1920
+limit_bottom = 3232
+script = ExtResource("5_cam")
+target = NodePath("../Ryn")
+config = ExtResource("6_ccfg")
+
+[node name="CameraShake" type="Node" parent="FollowCamera"]
+script = ExtResource("83_shake")
+
+[node name="GameplayAudio" type="Node" parent="." node_paths=PackedStringArray("ryn", "detection_reset", "checkpoints", "shake", "particles")]
+script = ExtResource("82_ga")
+particles = NodePath("../ParticleBurst")
+ryn = NodePath("../Ryn")
+shake = NodePath("../FollowCamera/CameraShake")
+detection_reset = NodePath("../DetectionReset")
+checkpoints = NodePath("../CheckpointManager")
+
+[node name="SceneTransition" type="CanvasLayer" parent="."]
+script = ExtResource("85_trans")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("84_pause")
+font = ExtResource("22_subcfg")
+
+[node name="Atmosphere" type="CanvasLayer" parent="."]
+script = ExtResource("89_atmo")
+vignette_alpha = 0.44
+dust_count = 30
+dust_color = Color(0.545098, 0.227451, 0.184314, 1)
+seed_value = 22
+
+[node name="ParticleBurst" type="Node2D" parent="."]
+script = ExtResource("90_part")
+
+[node name="Ambient" type="Node" parent="." node_paths=PackedStringArray("detection_reset")]
+script = ExtResource("34_amb")
+profile = 2
+detection_reset = NodePath("../DetectionReset")
+
+[node name="Minimap" type="CanvasLayer" parent="." node_paths=PackedStringArray("ryn", "camera")]
+script = ExtResource("91_map")
+ryn = NodePath("../Ryn")
+camera = NodePath("../FollowCamera")
+
+[node name="DevRoute" type="Node" parent="."]
+script = ExtResource("26_route")
+points = PackedVector2Array(72, 3168, 920, 3168, 968, 3120, 1016, 3120, 1064, 3072, 1144, 3072, 1192, 3024, 1272, 3024, 1320, 2976, 1400, 2976, 1448, 2928, 1528, 2928, 1576, 2880, 1656, 2880, 1704, 2832, 1832, 2832, 1832, 2672, 936, 2672, 936, 2448, 328, 2448, 328, 2224, 392, 2224, 392, 2064, 488, 2064, 552, 2064, 808, 2064, 824, 2224, 968, 2224, 968, 2064, 1656, 2064, 1672, 2064, 1688, 2064, 1800, 2064, 1800, 1776, 1736, 1776, 1736, 1632, 1192, 1632, 1192, 1488, 680, 1488, 680, 1344, 776, 1344, 776, 1200, 1608, 1200, 1608, 1040, 104, 1040, 104, 832, 1672, 832, 1672, 592, 1496, 592, 1448, 544, 1400, 544, 1352, 496, 1272, 496, 1224, 448, 1144, 448, 1096, 400, 1016, 400, 968, 352, 888, 352, 840, 304, 712, 304, 712, 160, 1000, 160)
+actions = PackedStringArray("start", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "gap", "walk", "drop", "walk", "climb_up", "walk", "dismantle_fence", "crawl", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "climb_up", "walk")
+
+[node name="DevRouteNoVent" type="Node" parent="."]
+script = ExtResource("26_route")
+points = PackedVector2Array(72, 3168, 920, 3168, 968, 3120, 1016, 3120, 1064, 3072, 1144, 3072, 1192, 3024, 1272, 3024, 1320, 2976, 1400, 2976, 1448, 2928, 1528, 2928, 1576, 2880, 1656, 2880, 1704, 2832, 1832, 2832, 1832, 2672, 936, 2672, 936, 2448, 328, 2448, 328, 2224, 392, 2224, 392, 2064, 488, 2064, 552, 2064, 808, 2064, 824, 2224, 968, 2224, 968, 2064, 1656, 2064, 1672, 2064, 1688, 2064, 1800, 2064, 1800, 1776, 1736, 1776, 1736, 1632, 1192, 1632, 1192, 1488, 680, 1488, 680, 1344, 776, 1344, 776, 1200, 1608, 1200, 1608, 1040, 104, 1040, 104, 832, 1672, 832, 1672, 592, 1496, 592, 1448, 544, 1400, 544, 1352, 496, 1272, 496, 1224, 448, 1144, 448, 1096, 400, 1016, 400, 968, 352, 888, 352, 840, 304, 712, 304, 712, 160, 1000, 160)
+actions = PackedStringArray("start", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "gap", "walk", "drop", "walk", "climb_up", "walk", "dismantle_fence", "crawl", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "climb_up", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "jump", "walk", "climb_up", "walk")

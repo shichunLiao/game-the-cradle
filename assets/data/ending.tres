@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EndingConfig" format=3]
+
+[ext_resource type="Script" path="res://src/ending/ending_config.gd" id="1_end"]
+
+[resource]
+script = ExtResource("1_end")
+vera_hostile = "「入侵者。排除。」"
+ryn_plead = "「姐姐！是我啊，是Ryn你的妹妹啊！」"
+vera_waking = "「不是叫你别来吗……」"
+ryn_found = "「我就知道肯定阻止不了你的。」"
+vera_knew = "「就知道你会来。」"
+narration_rest = "可以睡了。"
+photo_prompt = "E 举起照片"
+freeze_time = 1.6
+line_gap = 2.6
+sleep_fade_time = 4.5
+before_scene_change = 1.2
+warm = Color(0.768627, 0.647059, 0.456863, 1)
+freeze_dim = Color(0.0431373, 0.0705882, 0.12549, 1)
+freeze_dim_alpha = 0.55

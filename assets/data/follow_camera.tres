@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FollowCameraConfig" format=3]
+
+[ext_resource type="Script" path="res://src/camera/follow_camera_config.gd" id="1_cfg"]
+
+[resource]
+script = ExtResource("1_cfg")
+look_ahead_distance = 28.0
+look_ahead_smoothing = 5.0
+follow_smoothing_x = 9.0
+follow_smoothing_y = 4.0
+vertical_offset = -24.0
